@@ -5,6 +5,8 @@
             img {
                 height: 300px;
                 width: 300px;
+                display: block;
+                
             }
             p {
                 color: blue;
@@ -12,11 +14,36 @@
             body {
                 color: red;
             }
+            .column {
+                float: left;
+                width: 33.33%;
+            }
+
+            .row:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+            
         </style>
     </head>
     <body>
-        <img src="https://www.pngitem.com/pimgs/m/14-147638_chick-bird-easter-spring-animal-feather-chick-clipart.png">
-        <p>Hello</p>
-        this is a chick 
+        <main>
+            <div class="row">
+                <div class="column">
+                    <h2>Make</h2>
+                    
+                </div>
+                <div class="column">
+                    <h2>Chicken</h2>
+                    <img src="https://freepngimg.com/thumb/categories/30.png">
+                    
+                </div>
+                <div class="column">
+                    <h2>Nuggets</h2>
+                    
+                </div>
+            </div>
+        </main>
     </body>
 </html>
