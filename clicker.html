@@ -24,6 +24,9 @@
                 display: table;
                 clear: both;
             }
+            body {
+                background-image: url("https://foodtank.com/wp-content/uploads/2020/04/COVID-19-Relief_Small-Farms-.jpg");
+            }
             
         </style>
     </head>
@@ -36,7 +39,8 @@
                 </div>
                 <div class="column">
                     <h2>Chicken</h2>
-                    <img src="https://freepngimg.com/thumb/categories/30.png">
+                    <img src="https://freepngimg.com/thumb/categories/30.png" onclick="addToScore(1)">
+                    <span id="score">0 Chicken Nuggets</span>
                     
                 </div>
                 <div class="column">
@@ -46,4 +50,13 @@
             </div>
         </main>
     </body>
+    <script>
+        var score = 0;
+        function addToScore(amount) {
+            score = score + amount;
+            document.getElementById("score").innerHTML = score;
+        }
+            document.getElementById("score").innerHTML = score;
+        
+    </script>
 </html>

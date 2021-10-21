@@ -17,5 +17,27 @@
     </body>
 </html>
 <script>
-    document.getElementById("box")
+    var box = document.getElementById("box")
+    var x = 0;
+    var y = 0
+    var speed = 5;
+    setInterval(update,50)
+    function update(){
+        box.style.left = x + "px"
+        x = x + speed
+        if(x>=window.innerWidth) {
+            speed=-speed
+        }
+        if(x<0) {
+            speed=-speed
+        }
+        box.style.top = y + "px"
+        y = y + speed
+        if(y>=window.innerHeight) {
+            speed=-speed
+        }
+        if(y<0) {
+            speed=-speed
+        }
+    }
 </script>
