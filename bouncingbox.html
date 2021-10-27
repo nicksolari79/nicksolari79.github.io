@@ -18,26 +18,31 @@
 </html>
 <script>
     var box = document.getElementById("box")
+    box.addEventListener("click",boxclick)
     var x = 0;
     var y = 0
-    var speed = 5;
+    var speedx = 5;
+    var speedy = 5
     setInterval(update,50)
     function update(){
         box.style.left = x + "px"
-        x = x + speed
+        x = x + speedx
         if(x>=window.innerWidth) {
-            speed=-speed
+            speedx=-speedx
         }
         if(x<0) {
-            speed=-speed
+            speedx=-speedx
         }
         box.style.top = y + "px"
-        y = y + speed
+        y = y + speedy
         if(y>=window.innerHeight) {
-            speed=-speed
+            speedy=-speedy
         }
         if(y<0) {
-            speed=-speed
+            speedy=-speedy
         }
+    }
+    function boxclick() {
+        speedy=speedy+10
     }
 </script>
