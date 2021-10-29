@@ -39,7 +39,7 @@
                 </div>
                 <div class="column">
                     <h2>Chicken</h2>
-                    <img src="https://freepngimg.com/thumb/categories/30.png" onclick="addToScore(1)">
+                    <img id=img src="https://freepngimg.com/thumb/categories/30.png" onclick="addToScore(1)">
                     <span id="score">0 Chicken Nuggets</span>
                     
                 </div>
@@ -52,6 +52,10 @@
     </body>
     <script>
         var score = 0;
+        document.getElementById("img").addEventListener;
+        function imgClick(){
+            score+1
+        }
         function addToScore(amount) {
             score = score + amount;
             document.getElementById("score").innerHTML = score;
