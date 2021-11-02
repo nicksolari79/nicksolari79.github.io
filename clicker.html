@@ -1,66 +1,91 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <style>
-            img {
-                height: 300px;
-                width: 300px;
-                display: block;
-                
-            }
-            p {
-                color: blue;
-            }
-            body {
-                color: red;
-            }
-            .column {
-                float: left;
-                width: 33.33%;
-            }
 
-            .row:after {
-                content: "";
-                display: table;
-                clear: both;
-            }
-            body {
-                background-image: url("https://foodtank.com/wp-content/uploads/2020/04/COVID-19-Relief_Small-Farms-.jpg");
-            }
-            
-        </style>
-    </head>
-    <body>
-        <main>
-            <div class="row">
-                <div class="column">
-                    <h2>Make</h2>
-                    
-                </div>
-                <div class="column">
-                    <h2>Chicken</h2>
-                    <img id=img src="https://freepngimg.com/thumb/categories/30.png" onclick="addToScore(1)">
-                    <span id="score">0 Chicken Nuggets</span>
-                    
-                </div>
-                <div class="column">
-                    <h2>Nuggets</h2>
-                    
-                </div>
+<head>
+    <style>
+        img {
+            height: 300px;
+            width: 300px;
+            display: block;
+
+        }
+
+        p {
+            color: blue;
+        }
+
+        body {
+            color: red;
+        }
+
+        .column {
+            float: left;
+            width: 33.33%;
+        }
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        body {
+            background-image: url("https://foodtank.com/wp-content/uploads/2020/04/COVID-19-Relief_Small-Farms-.jpg");
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="row">
+            <div class="column">
+                <h2>Upgrades</h2>
+                <br><br>
+                <button id="inc" >Incubator</button>
+
             </div>
-        </main>
-    </body>
-    <script>
-        var score = 0;
-        document.getElementById("img").addEventListener;
-        function imgClick(){
-            score+1
+            <div class="column">
+                <h2>Make Chicken Nuggets</h2>
+                <img id="img" src="https://freepngimg.com/thumb/categories/30.png" onclick="addToScore(1)">
+                <span id="score"><b></b></span> <b>Chicken Nuggets</b>
+
+            </div>
+            <div class="column">
+                <h2>Nuggets</h2>
+
+            </div>
+        </div>
+    </main>
+</body>
+<script>
+    var score = 0;
+    var scorePerSec = 0; 
+    var incCost = 10
+    setInterval(idle, 500);
+    document.getElementById("img").addEventListener("click", imgClick);
+    document.getElementById("inc").addEventListener("click", incubator)
+    function idle(button) {
+        score = score + scorePerSec;
+        document.getElementById("score").innerText = score;
+       
+
+        // incubator
+
+    }
+
+    function imgClick() {
+        score = score + 1
+        document.getElementById("score").innerText = score;
+    }
+    function incubator() {
+        if (score >= incCost){
+        document.getElementById("score").innerText = score;
+        scorePerSec=scorePerSec+1
         }
-        function addToScore(amount) {
-            score = score + amount;
-            document.getElementById("score").innerHTML = score;
-        }
-            document.getElementById("score").innerHTML = score;
         
-    </script>
+
+    }
+
+</script>
+
 </html>
