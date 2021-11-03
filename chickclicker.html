@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <style>
         img {
             height: 300px;
             width: 300px;
             display: block;
-
         }
 
         p {
@@ -34,14 +32,15 @@
         }
     </style>
 </head>
-
 <body>
     <main>
         <div class="row">
             <div class="column">
-                <h2>Upgrades</h2>
+                <h2>Buy Upgrades</h2>
                 <br><br>
-                <button id="inc" >Incubator</button>
+                <button id="chic">Chickens</button>
+                <br></br>
+                <button id="farm">Farmers</button>
 
             </div>
             <div class="column">
@@ -60,32 +59,37 @@
 <script>
     var score = 0;
     var scorePerSec = 0; 
-    var incCost = 10
+    var chicCost = 10;
+    var farmCost = 50;
     setInterval(idle, 500);
     document.getElementById("img").addEventListener("click", imgClick);
-    document.getElementById("inc").addEventListener("click", incubator)
+    document.getElementById("chic").addEventListener("click", buyChickens);
+    document.getElementById("farm").addEventListener("click", buyFarmers);
     function idle(button) {
         score = score + scorePerSec;
         document.getElementById("score").innerText = score;
-       
-
-        // incubator
-
     }
-
+    // Image Click
     function imgClick() {
         score = score + 1
         document.getElementById("score").innerText = score;
     }
-    function incubator() {
-        if (score >= incCost){
+    // Upgrade Chickens
+    function buyChickens() {
+        if (score >= chicCost){
         document.getElementById("score").innerText = score;
         scorePerSec=scorePerSec+1
+        score=score-10
         }
-        
-
-    }
+        }
+    // Upgrade Farmers
+    function buyFarmers() {
+        if (score >= farmCost){
+        document.getElementById("score").innerText = score;
+        scorePerSec=scorePerSec+5
+        score=score-50
+        }
+        }
 
 </script>
-
 </html>
