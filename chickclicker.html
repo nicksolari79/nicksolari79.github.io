@@ -89,16 +89,16 @@
     function buyChickens() {
         if (score >= chicCost){
         document.getElementById("score").innerText = score;
+        score=score-chicCost
         scorePerSec=scorePerSec+1
-        score=score-10
         }
         }
     // Upgrade Farmers
     function buyFarmers() {
         if (score >= farmCost){
         document.getElementById("score").innerText = score;
+        score=score-farmCost
         scorePerSec=scorePerSec+5
-        score=score-50
         }
         }
 
