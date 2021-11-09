@@ -49,15 +49,15 @@
             <div class="column">
                 <h2>Buy Upgrades</h2>
                 <br><br>
-                <button id="chic">Chickens</button>
+                <button id="chic">Chickens</button> Cost: <span id="chicCost"></span> Amount: <span id="chicAmt"></span>
                 <br></br>
-                <button id="farm">Farmers</button>
+                <button id="farm">Farmers</button> Cost: <span id="farmCost"></span> Amount: <span id="farmAmt"></span>
 
             </div>
             <div class="column">
                 <h2>Make Chicken Nuggets</h2>
                 <img id="img" src="https://freepngimg.com/thumb/categories/30.png" onclick="addToScore(1)">
-                <span id="score"><b></b></span> <b>Chicken Nuggets</b>
+                <span id="score"><b></b></span> <b>Chicken Nuggets</b> <span id="scorePerSec"></span> Nuggets Per Second
 
             </div>
             <div class="column">
@@ -72,10 +72,18 @@
     var scorePerSec = 0; 
     var chicCost = 10;
     var farmCost = 50;
-    setInterval(idle, 500);
+    var chicAmt = 0;
+    var farmAmt = 0;
+    setInterval(idle, 1000);
     document.getElementById("img").addEventListener("click", imgClick);
     document.getElementById("chic").addEventListener("click", buyChickens);
     document.getElementById("farm").addEventListener("click", buyFarmers);
+    document.getElementById("chicAmt").addEventListener("click", buyChickens);
+    document.getElementById("chicCost").innerText = chicCost;
+    document.getElementById("farmCost").innerText = farmCost;
+    document.getElementById("chicAmt").innerText = chicAmt;
+    document.getElementById("farmAmt").innerText = farmAmt;
+    document.getElementById("scorePerSec").innerText = scorePerSec;
     function idle(button) {
         score = score + scorePerSec;
         document.getElementById("score").innerText = score;
@@ -91,7 +99,11 @@
         document.getElementById("score").innerText = score;
         score=score-chicCost
         scorePerSec=scorePerSec+1
+        document.getElementById("scorePerSec").innerText = scorePerSec;
         chicCost=Math.round(chicCost*1.5) 
+        document.getElementById("chicCost").innerText = chicCost;
+        chicAmt=chicAmt+1
+        document.getElementById("chicAmt").innerText = chicAmt;
         }
         }
     // Upgrade Farmers
@@ -100,6 +112,11 @@
         document.getElementById("score").innerText = score;
         score=score-farmCost
         scorePerSec=scorePerSec+5
+        document.getElementById("scorePerSec").innerText = scorePerSec;
+        farmCost=Math.round(farmCost*1.5)
+        document.getElementById("farmCost").innerText = farmCost;
+        farmAmt=farmAmt+1
+        document.getElementById("farmAmt").innerText = farmAmt;
         }
         }
 
