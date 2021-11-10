@@ -49,19 +49,29 @@
             <div class="column">
                 <h2>Buy Upgrades</h2>
                 <br><br>
-                <button id="chic">Chickens</button> Cost: <span id="chicCost"></span> Amount: <span id="chicAmt"></span>
+                <button id="chic" title=1PerSec>Breed Chickens</button> Cost: <span id="chicCost"></span> Amount: <span id="chicAmt"></span>
                 <br></br>
-                <button id="farm">Farmers</button> Cost: <span id="farmCost"></span> Amount: <span id="farmAmt"></span>
+                <button id="farm" title=5PerSec>Hire Farmers</button> Cost: <span id="farmCost"></span> Amount: <span id="farmAmt"></span>
+                <br></br>
+                <button id="inc" title=10PerSec>Buy Incubators</button> Cost: <span id="incCost"></span> Amount: <span id="incAmt"></span>
+                <br></br>
+                <button id="coop" title = 50PerSec>Purchase Coops</button> Cost: <span id="coopCost"></span> Amount: <span id="coopAmt"></span>
+                <br></br>
+                <button id="barn" title = 100PerSec>Build Barns</button> Cost: <span id="barnCost"></span> Amount: <span id="barnAmt"></span>
+                <br></br>
+                <button id="land" title = 500PerSec>Acquire Land</button> Cost: <span id="landCost"></span> Amount: <span id="landAmt"></span>
+                <br></br>
+                <button id="expand" title = 1000PerSec>Expand Nugget Empire</button> Cost: <span id="expCost"></span> Amount: <span id="expAmt"></span>
 
             </div>
             <div class="column">
                 <h2>Make Chicken Nuggets</h2>
-                <img id="img" src="https://freepngimg.com/thumb/categories/30.png" onclick="addToScore(1)">
+                <img id="img" src="/Images/21995-9-baby-chicken-transparent-image-thumb (2).png" onclick="addToScore(1)">
                 <span id="score"><b></b></span> <b>Chicken Nuggets</b> <span id="scorePerSec"></span> Nuggets Per Second
 
             </div>
             <div class="column">
-                <h2>Nuggets</h2>
+                <h2>Hire Workers</h2>
 
             </div>
         </div>
@@ -74,15 +84,39 @@
     var farmCost = 50;
     var chicAmt = 0;
     var farmAmt = 0;
+    var incCost = 100;
+    var incAmt = 0;
+    var coopCost = 500;
+    var coopAmt = 0;
+    var barnCost = 1000;
+    var barnAmt = 0;
+    var landCost = 10000;
+    var landAmt = 0;
+    var expCost = 50000;
+    var expAmt = 0;
     setInterval(idle, 1000);
     document.getElementById("img").addEventListener("click", imgClick);
     document.getElementById("chic").addEventListener("click", buyChickens);
     document.getElementById("farm").addEventListener("click", buyFarmers);
-    document.getElementById("chicAmt").addEventListener("click", buyChickens);
+    document.getElementById("inc").addEventListener("click", buyIncubators);
+    document.getElementById("coop").addEventListener("click", buyCoops);
+    document.getElementById("barn").addEventListener("click", buyBarns);
+    document.getElementById("land").addEventListener("click", buyLand);
+    document.getElementById("expand").addEventListener("click", buyExpand);
     document.getElementById("chicCost").innerText = chicCost;
     document.getElementById("farmCost").innerText = farmCost;
+    document.getElementById("incCost").innerText = incCost;
+    document.getElementById("coopCost").innerText = coopCost;
+    document.getElementById("barnCost").innerText = barnCost;
+    document.getElementById("landCost").innerText = landCost;
+    document.getElementById("expCost").innerText = expCost;
     document.getElementById("chicAmt").innerText = chicAmt;
     document.getElementById("farmAmt").innerText = farmAmt;
+    document.getElementById("incAmt").innerText = incAmt;
+    document.getElementById("coopAmt").innerText = coopAmt;
+    document.getElementById("barnAmt").innerText = barnAmt;
+    document.getElementById("landAmt").innerText = landAmt;
+    document.getElementById("expAmt").innerText = expAmt;
     document.getElementById("scorePerSec").innerText = scorePerSec;
     function idle(button) {
         score = score + scorePerSec;
@@ -117,6 +151,71 @@
         document.getElementById("farmCost").innerText = farmCost;
         farmAmt=farmAmt+1
         document.getElementById("farmAmt").innerText = farmAmt;
+        }
+        }
+    // Upgrade Incubators
+    function buyIncubators() {
+        if (score >= incCost){
+        document.getElementById("score").innerText = score;
+        score=score-incCost
+        scorePerSec=scorePerSec+10
+        document.getElementById("scorePerSec").innerText = scorePerSec;
+        incCost=Math.round(incCost*1.5)
+        document.getElementById("incCost").innerText = incCost;
+        incAmt=incAmt+1
+        document.getElementById("incAmt").innerText = incAmt;
+        }
+        }
+        // Upgrade Coops
+    function buyCoops() {
+        if (score >= coopCost){
+        document.getElementById("score").innerText = score;
+        score=score-coopCost
+        scorePerSec=scorePerSec+50
+        document.getElementById("scorePerSec").innerText = scorePerSec;
+        coopCost=Math.round(coopCost*1.5)
+        document.getElementById("coopCost").innerText = coopCost;
+        coopAmt=coopAmt+1
+        document.getElementById("coopAmt").innerText = coopAmt;
+        }
+        }
+        // Upgrade Barns
+    function buyBarns() {
+        if (score >= barnCost){
+        document.getElementById("score").innerText = score;
+        score=score-barnCost
+        scorePerSec=scorePerSec+100
+        document.getElementById("scorePerSec").innerText = scorePerSec;
+        barnCost=Math.round(barnCost*1.5)
+        document.getElementById("barnCost").innerText = barnCost;
+        barnAmt=barnAmt+1
+        document.getElementById("barnAmt").innerText = barnAmt;
+        }
+        }
+        // Upgrade Land
+    function buyLand() {
+        if (score >= landCost){
+        document.getElementById("score").innerText = score;
+        score=score-landCost
+        scorePerSec=scorePerSec+500
+        document.getElementById("scorePerSec").innerText = scorePerSec;
+        landCost=Math.round(landCost*1.5)
+        document.getElementById("landCost").innerText = landCost;
+        landAmt=landAmt+1
+        document.getElementById("landAmt").innerText = landAmt;
+        }
+        }
+        // Upgrade Expand
+    function buyExpand() {
+        if (score >= expCost){
+        document.getElementById("score").innerText = score;
+        score=score-expCost
+        scorePerSec=scorePerSec+1000
+        document.getElementById("scorePerSec").innerText = scorePerSec;
+        expCost=Math.round(expCost*1.5)
+        document.getElementById("expCost").innerText = expCost;
+        expAmt=expAmt+1
+        document.getElementById("expAmt").innerText = expAmt;
         }
         }
 
