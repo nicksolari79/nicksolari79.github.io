@@ -41,6 +41,15 @@
             border-color: yellow;
         }
 
+        #hireworkers{
+            float:right
+        }
+
+        #shinji{
+            float:right
+        }
+        
+
     </style>
 </head>
 <body>
@@ -65,13 +74,15 @@
 
             </div>
             <div class="column">
-                <h2>Make Chicken Nuggets</h2>
+                <h2 id="makechic">Make Chicken Nuggets</h2>
                 <img id="img" src="/Images/21995-9-baby-chicken-transparent-image-thumb (2).png" onclick="addToScore(1)">
                 <span id="score"><b></b></span> <b>Chicken Nuggets</b> <span id="scorePerSec"></span> Nuggets Per Second
 
             </div>
             <div class="column">
-                <h2>Hire Workers</h2>
+                <h2 id="hireworkers">Hire Workers</h2>
+                <br><br><br><br><br><br>
+                Cost to Hire: <button id="shinji">Shinji Ikari</button>
 
             </div>
         </div>
@@ -94,6 +105,7 @@
     var landAmt = 0;
     var expCost = 50000;
     var expAmt = 0;
+    var shinjiCost = 25000
     setInterval(idle, 1000);
     document.getElementById("img").addEventListener("click", imgClick);
     document.getElementById("chic").addEventListener("click", buyChickens);
@@ -216,6 +228,14 @@
         document.getElementById("expCost").innerText = expCost;
         expAmt=expAmt+1
         document.getElementById("expAmt").innerText = expAmt;
+        }
+        }
+        // Shinji Ikari
+    function hireShinji() {
+        if (score >= shinjiCost){
+        score=score-shinjiCost
+        scorePerSec=scorePerSec+500
+        document.getElementById("scorePerSec").innerText = scorePerSec;
         }
         }
 
