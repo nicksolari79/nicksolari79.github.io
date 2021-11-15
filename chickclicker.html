@@ -78,24 +78,28 @@
             display:none;
             position:fixed;
             bottom:0px;
+            left:300px;
         }
 
         #gihunImg{
             display:none;
             position:fixed;
             bottom:0px;
+            left:550px;
         }
         
         #dreamImg{
             display:none;
             position:fixed;
             bottom:0px;
+            left:800px;
         }
 
         #freddyImg{
             display:none;
             position:fixed;
             bottom:0px;
+            left:1050px;
         }
 
     </style>
@@ -121,6 +125,10 @@
                 <button id="expand" title = 1000PerSec>Expand Nugget Empire</button> Cost: <span id="expCost"></span> Amount: <span id="expAmt"></span>
                 <br><br><br><br><br><br><br><br>
                 <img id="shinjiImg" src="Images/farmerShinji (2).png" >
+                <img id="crewmateImg" src="Images/farmerCrewmate.png" >
+                <img id="gihunImg" src="Images/farmerGihun.png" >
+                <img id="dreamImg" src="Images/farmerDream.png" >
+                <img id="freddyImg" src="Images/farmerFreddy3.png" >
 
             </div>
             <div class="column">
@@ -186,9 +194,9 @@
     document.getElementById("expand").addEventListener("click", buyExpand);
     document.getElementById("shinji").addEventListener("click", hireShinji);
     document.getElementById("crewmate").addEventListener("click", hireCrewmate);
-    document.getElementById("crewmate").addEventListener("click", hireGihun);
-    document.getElementById("crewmate").addEventListener("click", hireDream);
-    document.getElementById("crewmate").addEventListener("click", hireFreddy);
+    document.getElementById("gihun").addEventListener("click", hireGihun);
+    document.getElementById("dream").addEventListener("click", hireDream);
+    document.getElementById("freddy").addEventListener("click", hireFreddy);
     document.getElementById("chicCost").innerText = chicCost;
     document.getElementById("farmCost").innerText = farmCost;
     document.getElementById("incCost").innerText = incCost;
@@ -315,7 +323,7 @@
             if(shinjiAppear === false){
                 shinjiAppear = true;
                 score=score-shinjiCost
-                scorePerSec=scorePerSec+500
+                scorePerSec=scorePerSec+150
                 document.getElementById("scorePerSec").innerText = scorePerSec;
                 document.getElementById('shinjiImg').style.display='block';
         }
@@ -327,7 +335,7 @@
             if(crewmateAppear === false){
                 crewmateAppear = true;
                 score=score-crewmateCost
-                scorePerSec=scorePerSec+1000
+                scorePerSec=scorePerSec+300
                 document.getElementById("scorePerSec").innerText = scorePerSec;
                 document.getElementById('crewmateImg').style.display='block';
         }
@@ -339,7 +347,7 @@
             if(gihunAppear === false){
                 gihunAppear = true;
                 score=score-gihunCost
-                scorePerSec=scorePerSec+1500
+                scorePerSec=scorePerSec+750
                 document.getElementById("scorePerSec").innerText = scorePerSec;
                 document.getElementById('gihunImg').style.display='block';
         }
@@ -351,7 +359,7 @@
             if(dreamAppear === false){
                 dreamAppear = true;
                 score=score-dreamCost
-                scorePerSec=scorePerSec+2000
+                scorePerSec=scorePerSec+1000
                 document.getElementById("scorePerSec").innerText = scorePerSec;
                 document.getElementById('dreamImg').style.display='block';
         }
@@ -363,18 +371,75 @@
             if(freddyAppear === false){
                 freddyAppear = true;
                 score=score-freddyCost
-                scorePerSec=scorePerSec+2500
+                scorePerSec=scorePerSec+2000
                 document.getElementById("scorePerSec").innerText = scorePerSec;
                 document.getElementById('freddyImg').style.display='block';
         }
         }
         }
         // Save Game
-        function saveGame() {
+          //save game stuff//
+          function saveGame() {
             var gameSave = {
                 score: score,
+                chicCost: chicCost,
+                chicAmt: chicAmt,
+                farmCost: farmCost,
+                farmAmt: farmAmt,
+                coopCost: coopCost,
+                coopAmt: coopAmt,
+                incCost: incCost,
+                incAmt: incAmt,
+                landCost: landCost,
+                landAmt: landAmt,
+                expCost: expCost,
+                expAmt: expAmt,
+                barnCost: barnCost,
+                barnAmt: barnAmt,
+                shinjiCost: shinjiCost,
+                crewmateCost: crewmateCost,
+                gihunCost: gihunCost,
+                dreamCost: dreamCost,
+                freddyCost: freddyCost,
+                shinjiAppear: shinjiAppear,
+                crewmateAppear: crewmateAppear,
+                gihunAppear: gihunAppear,
+                dreamAppear: dreamAppear,
+                freddyAppear: freddyAppear
+
+            };
+            localStorage.setItem("gameSave", JSON.stringify(gameSave));
         }
-        }
+
+            function loadgame() { 
+                var savedGame = JSON.parse(localStorage.getItem("gameSave"));
+                if (typeof savedGame.score !== "undefined") score = savedGame.score;
+                if (typeof savedGame.chicCost !== "undefined") chicCost = savedGame.chicCost;
+                if (typeof savedGame.chicAmt !== "undefined") chicAmt = savedGame.chicAmt;
+                if (typeof savedGame.farmAmt !== "undefined") farmAmt = savedGame.farmAmt;
+                if (typeof savedGame.farmCost !== "undefined") farmCost = savedGame.farmCost;
+                if (typeof savedGame.incAmt !== "undefined") incAmt = savedGame.incAmt;
+                if (typeof savedGame.incCost !== "undefined") incCost = savedGame.incCost;
+                if (typeof savedGame.barnAmt !== "undefined") barnAmt = savedGame.barnAmt;
+                if (typeof savedGame.barnCost !== "undefined") barnCost = savedGame.barnCost;
+                if (typeof savedGame.chicAmt !== "undefined") chicAmt = savedGame.chicAmt;
+                if (typeof savedGame.chicAmt !== "undefined") chicAmt = savedGame.chicAmt;
+                if (typeof savedGame.chicAmt !== "undefined") chicAmt = savedGame.chicAmt;
+                if (typeof savedGame.chicAmt !== "undefined") chicAmt = savedGame.chicAmt;
+                if (typeof savedGame.chicAmt !== "undefined") chicAmt = savedGame.chicAmt;
+                if (typeof savedGame.chicAmt !== "undefined") chicAmt = savedGame.chicAmt;
+                if (typeof savedGame.chicAmt !== "undefined") chicAmt = savedGame.chicAmt;
+                if (typeof savedGame.chicAmt !== "undefined") chicAmt = savedGame.chicAmt;
+                if (typeof savedGame.chicAmt !== "undefined") chicAmt = savedGame.chicAmt;
+
+            }
+       
+            window.onload = function() {
+                loadgame();
+                updateScorePerSecond();
+                document.getElementById("score").innerHTML = score;
+                document.getElementById("nervepersonnelcost").innerHTML = nervepersonnelcost;
+        } 
 
 
 </script>
