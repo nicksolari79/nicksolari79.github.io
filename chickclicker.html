@@ -70,9 +70,33 @@
 
         #shinjiImg{
             display:none;
+            position:fixed;
+            bottom:0px;
+        }
+
+        #crewmateImg{
+            display:none;
+            position:fixed;
+            bottom:0px;
+        }
+
+        #gihunImg{
+            display:none;
+            position:fixed;
+            bottom:0px;
         }
         
+        #dreamImg{
+            display:none;
+            position:fixed;
+            bottom:0px;
+        }
 
+        #freddyImg{
+            display:none;
+            position:fixed;
+            bottom:0px;
+        }
     </style>
 </head>
 <body>
@@ -160,9 +184,9 @@
     document.getElementById("expand").addEventListener("click", buyExpand);
     document.getElementById("shinji").addEventListener("click", hireShinji);
     document.getElementById("crewmate").addEventListener("click", hireCrewmate);
-    document.getElementById("gihun").addEventListener("click", hireGihun);
-    document.getElementById("dream").addEventListener("click", hireDream);
-    document.getElementById("freddy").addEventListener("click", hireFreddy);
+    document.getElementById("crewmate").addEventListener("click", hireGihun);
+    document.getElementById("crewmate").addEventListener("click", hireDream);
+    document.getElementById("crewmate").addEventListener("click", hireFreddy);
     document.getElementById("chicCost").innerText = chicCost;
     document.getElementById("farmCost").innerText = farmCost;
     document.getElementById("incCost").innerText = incCost;
@@ -304,6 +328,42 @@
                 scorePerSec=scorePerSec+1000
                 document.getElementById("scorePerSec").innerText = scorePerSec;
                 document.getElementById('crewmateImg').style.display='block';
+        }
+        }
+        }
+        // Seong Gi-Hun
+    function hireGihun() {
+        if (score >= gihunCost){
+            if(gihunAppear === false){
+                gihunAppear = true;
+                score=score-gihunCost
+                scorePerSec=scorePerSec+1500
+                document.getElementById("scorePerSec").innerText = scorePerSec;
+                document.getElementById('gihunImg').style.display='block';
+        }
+        }
+        }
+        // Dream
+    function hireDream() {
+        if (score >= dreamCost){
+            if(dreamAppear === false){
+                dreamAppear = true;
+                score=score-dreamCost
+                scorePerSec=scorePerSec+1500
+                document.getElementById("scorePerSec").innerText = scorePerSec;
+                document.getElementById('dreamImg').style.display='block';
+        }
+        }
+        }
+        // Freddy Fazbear
+    function hireFreddy() {
+        if (score >= freddyCost){
+            if(freddyAppear === false){
+                freddyAppear = true;
+                score=score-freddyCost
+                scorePerSec=scorePerSec+1500
+                document.getElementById("scorePerSec").innerText = scorePerSec;
+                document.getElementById('freddyImg').style.display='block';
         }
         }
         }
