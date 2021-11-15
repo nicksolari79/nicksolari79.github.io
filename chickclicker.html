@@ -31,7 +31,7 @@
             background-image: url("https://foodtank.com/wp-content/uploads/2020/04/COVID-19-Relief_Small-Farms-.jpg");
             background-repeat: no-repeat;
             background-attachment: fixed;
-            background-size: cover;
+            background-size: cover;    
         }
 
         button {
@@ -97,6 +97,7 @@
             position:fixed;
             bottom:0px;
         }
+
     </style>
 </head>
 <body>
@@ -126,20 +127,21 @@
                 <h2 id="makechic">Make Chicken Nuggets</h2>
                 <img id="img" src="/Images/21995-9-baby-chicken-transparent-image-thumb (2).png" onclick="addToScore(1)">
                 <span id="score"><b></b></span> <b>Chicken Nuggets</b> <span id="scorePerSec"></span> Nuggets Per Second
+                <br>ㅤㅤㅤㅤㅤㅤㅤㅤ<button onlick="saveGame()">Save</button>
 
             </div>
             <div class="column">
                 <h2 id="hireworkers">Hire Workers</h2>
                 <br><br><br><br><br><br>
-                ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤCost to Hire: <span id="shinjiCost"></span><button id="shinji">Shinji Ikari</button>
+                ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤCost to Hire: <span id="shinjiCost"></span><button id="shinji">Shinji Ikari</button>
                 <br><br>
-                ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤCost to Hire: <span id="crewmateCost"></span><button id="crewmate">Crewmate</button>
+                ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤCost to Hire: <span id="crewmateCost"></span><button id="crewmate">Crewmate</button>
                 <br><br>
-                ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤCost to Hire: <span id="gihunCost"></span><button id="gihun">Seong Gi-Hun</button>
+                ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤCost to Hire: <span id="gihunCost"></span><button id="gihun">Seong Gi-Hun</button>
                 <br><br>
-                ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤCost to Hire: <span id="dreamCost"></span><button id="dream">Dream</button>
+                ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤCost to Hire: <span id="dreamCost"></span><button id="dream">Dream</button>
                 <br><br>
-                ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤCost to Hire: <span id="freddyCost"></span><button id="freddy">Freddy Fazbear</button>
+                ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤCost to Hire: <span id="freddyCost"></span><button id="freddy">Freddy Fazbear</button>
                 
 
             </div>
@@ -349,7 +351,7 @@
             if(dreamAppear === false){
                 dreamAppear = true;
                 score=score-dreamCost
-                scorePerSec=scorePerSec+1500
+                scorePerSec=scorePerSec+2000
                 document.getElementById("scorePerSec").innerText = scorePerSec;
                 document.getElementById('dreamImg').style.display='block';
         }
@@ -361,12 +363,19 @@
             if(freddyAppear === false){
                 freddyAppear = true;
                 score=score-freddyCost
-                scorePerSec=scorePerSec+1500
+                scorePerSec=scorePerSec+2500
                 document.getElementById("scorePerSec").innerText = scorePerSec;
                 document.getElementById('freddyImg').style.display='block';
         }
         }
         }
+        // Save Game
+        function saveGame() {
+            var gameSave = {
+                score: score,
+        }
+        }
+
 
 </script>
 </html>
