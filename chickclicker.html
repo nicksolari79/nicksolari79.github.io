@@ -136,7 +136,8 @@
                 <h2 id="makechic">Make Chicken Nuggets</h2>
                 <img id="img" src="/Images/21995-9-baby-chicken-transparent-image-thumb (2).png" onclick="addToScore(1)">
                 <span id="score"><b></b></span> <b>Chicken Nuggets</b> <span id="scorePerSec"></span> Nuggets Per Second
-                <br>ㅤㅤㅤㅤㅤㅤㅤㅤ<button title="This game autosaves every minute" onlick="saveGame()">Save</button>
+                <br>ㅤㅤㅤㅤㅤㅤㅤㅤ<button title="This game autosaves every minute" onclick="saveGame()">Save</button>
+                                    <button onclick="loadgame()">Load</button>
 
             </div>
             <div class="column">
@@ -414,6 +415,7 @@
           function saveGame() {
             var gameSave = {
                 score: score,
+                scorePerSec: scorePerSec,
                 chicCost: chicCost,
                 chicAmt: chicAmt,
                 farmCost: farmCost,
@@ -451,6 +453,7 @@
             function loadgame() { 
                 var savedGame = JSON.parse(localStorage.getItem("gameSave"));
                 if (typeof savedGame.score !== "undefined") score = savedGame.score;
+                if (typeof savedGame.scorePerSec !== "undefined") scorePerSec = savedGame.scorePerSec;
                 if (typeof savedGame.chicCost !== "undefined") chicCost = savedGame.chicCost;
                 if (typeof savedGame.chicAmt !== "undefined") chicAmt = savedGame.chicAmt;
                 if (typeof savedGame.farmAmt !== "undefined") farmAmt = savedGame.farmAmt;
@@ -506,11 +509,12 @@
                 document.getElementById("gihunCost").innerHTML = gihunCost;
                 document.getElementById("dreamCost").innerHTML = dreamCost;
                 document.getElementById("freddyCost").innerHTML = freddyCost;
-                document.getElementById("shinjiP").innerText = shinjiP;
-                document.getElementById("crewmateP").innerText = crewmateP;
-                document.getElementById("gihunP").innerText = gihunP;
-                document.getElementById("dreamP").innerText = dreamP;
-                document.getElementById("freddyP").innerText = freddyP;
+                document.getElementById("shinjiP").innerHTML = shinjiP;
+                document.getElementById("crewmateP").innerHTML = crewmateP;
+                document.getElementById("gihunP").innerHTML = gihunP;
+                document.getElementById("dreamP").innerHTML = dreamP;
+                document.getElementById("freddyP").innerHTML = freddyP;
+                document.getElementById("scorePerSec").innerHTML = scorePerSec;
 
                     } 
             setInterval(function () {
