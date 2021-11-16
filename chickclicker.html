@@ -189,6 +189,11 @@
     var gihunP = "✓";
     var dreamP = "✓";
     var freddyP = "✓";
+    var shinjiBefore = 0;
+    var crewmateBefore = 0;
+    var gihunBefore = 0;
+    var dreamBefore = 0;
+    var freddyBefore = 0; 
     setInterval(idle, 1000);
     document.getElementById("img").addEventListener("click", imgClick);
     document.getElementById("chic").addEventListener("click", buyChickens);
@@ -331,9 +336,11 @@
                 shinjiAppear = true;
                 score=score-shinjiCost
                 scorePerSec=scorePerSec+150
+                shinjiBefore = 150
                 document.getElementById("scorePerSec").innerText = scorePerSec;
                 document.getElementById('shinjiImg').style.display='block';
                 document.getElementById("shinjiP").innerText = shinjiP;
+                updateScorePerSecond();
         }
         }
         }
@@ -344,9 +351,11 @@
                 crewmateAppear = true;
                 score=score-crewmateCost
                 scorePerSec=scorePerSec+300
+                crewmateBefore = 300
                 document.getElementById("scorePerSec").innerText = scorePerSec;
                 document.getElementById('crewmateImg').style.display='block';
                 document.getElementById("crewmateP").innerText = crewmateP;
+                updateScorePerSecond();
         }
         }
         }
@@ -357,9 +366,11 @@
                 gihunAppear = true;
                 score=score-gihunCost
                 scorePerSec=scorePerSec+750
+                gihunBefore = 750
                 document.getElementById("scorePerSec").innerText = scorePerSec;
                 document.getElementById('gihunImg').style.display='block';
                 document.getElementById("gihunP").innerText = gihunP;
+                updateScorePerSecond();
         }
         }
         }
@@ -370,9 +381,11 @@
                 dreamAppear = true;
                 score=score-dreamCost
                 scorePerSec=scorePerSec+1000
+                dreamBefore = 1000
                 document.getElementById("scorePerSec").innerText = scorePerSec;
                 document.getElementById('dreamImg').style.display='block';
                 document.getElementById("dreamP").innerText = dreamP;
+                updateScorePerSecond();
         }
         }
         }
@@ -383,9 +396,16 @@
                 freddyAppear = true;
                 score=score-freddyCost
                 scorePerSec=scorePerSec+2000
+                freddyBefore = 2000
                 document.getElementById("scorePerSec").innerText = scorePerSec;
                 document.getElementById('freddyImg').style.display='block';
                 document.getElementById("freddyP").innerText = freddyP;
+                updateScorePerSecond();
+
+    function updateScorePerSecond() {
+            scorePerSecond = (chicAmt) + (farmAmt*5) + (incAmt*10) + (coopAmt*50) + (barnAmt*100) + (landAmt*500) + (expAmt*1000) + shinjiBefore + crewmateBefore + gihunBefore + dreamBefore + freddyBefore;
+            document.getElementById("scorepersecond").innerHTML = scorePerSecond;
+        }
         }
         }
         }
