@@ -137,7 +137,6 @@
                 <img id="img" src="/Images/21995-9-baby-chicken-transparent-image-thumb (2).png" onclick="addToScore(1)">
                 <span id="score"><b></b></span> <b>Chicken Nuggets</b> <span id="scorePerSec"></span> Nuggets Per Second
                 <br>ㅤㅤㅤㅤㅤㅤㅤㅤ<button title="This game autosaves every minute" onclick="saveGame()">Save</button>
-                                    <button id="load" onclick="loadgame()">Load</button>
 
             </div>
             <div class="column">
@@ -398,10 +397,7 @@
                 document.getElementById('freddyImg').style.display='block';
                 document.getElementById("freddyP").innerText = freddyP;
 
-    function updateScorePerSecond() {
-            scorePerSecond = (chicAmt) + (farmAmt*5) + (incAmt*10) + (coopAmt*50) + (barnAmt*100) + (landAmt*500) + (expAmt*1000) + shinjiBefore + crewmateBefore + gihunBefore + dreamBefore + freddyBefore;
-            document.getElementById("scorepersecond").innerHTML = scorePerSecond;
-        }
+
         }
         }
         }
@@ -410,36 +406,7 @@
           function saveGame() {
             var gameSave = {
                 score: score,
-                scorePerSec: scorePerSec,
-                chicCost: chicCost,
-                chicAmt: chicAmt,
-                farmCost: farmCost,
-                farmAmt: farmAmt,
-                coopCost: coopCost,
-                coopAmt: coopAmt,
-                incCost: incCost,
-                incAmt: incAmt,
-                landCost: landCost,
-                landAmt: landAmt,
-                expCost: expCost,
-                expAmt: expAmt,
-                barnCost: barnCost,
-                barnAmt: barnAmt,
-                shinjiCost: shinjiCost,
-                crewmateCost: crewmateCost,
-                gihunCost: gihunCost,
-                dreamCost: dreamCost,
-                freddyCost: freddyCost,
-                shinjiAppear: shinjiAppear,
-                crewmateAppear: crewmateAppear,
-                gihunAppear: gihunAppear,
-                dreamAppear: dreamAppear,
-                freddyAppear: freddyAppear,
-                shinjiP: shinjiP,
-                crewmateP: crewmateP,
-                gihunP: gihunP,
-                dreamP: dreamP,
-                freddyP: freddyP
+            
 
             };
             localStorage.setItem("gameSave", JSON.stringify(gameSave));
@@ -448,36 +415,6 @@
             function loadgame() { 
                 var savedGame = JSON.parse(localStorage.getItem("gameSave"));
                 if (typeof savedGame.score !== "undefined") score = savedGame.score;
-                if (typeof savedGame.scorePerSec !== "undefined") scorePerSec = savedGame.scorePerSec;
-                if (typeof savedGame.chicCost !== "undefined") chicCost = savedGame.chicCost;
-                if (typeof savedGame.chicAmt !== "undefined") chicAmt = savedGame.chicAmt;
-                if (typeof savedGame.farmAmt !== "undefined") farmAmt = savedGame.farmAmt;
-                if (typeof savedGame.farmCost !== "undefined") farmCost = savedGame.farmCost;
-                if (typeof savedGame.incAmt !== "undefined") incAmt = savedGame.incAmt;
-                if (typeof savedGame.incCost !== "undefined") incCost = savedGame.incCost;
-                if (typeof savedGame.barnAmt !== "undefined") barnAmt = savedGame.barnAmt;
-                if (typeof savedGame.barnCost !== "undefined") barnCost = savedGame.barnCost;
-                if (typeof savedGame.landAmt !== "undefined") landAmt = savedGame.landAmt;
-                if (typeof savedGame.landCost !== "undefined") landCost = savedGame.landCost;
-                if (typeof savedGame.expAmt !== "undefined") expAmt = savedGame.expAmt;
-                if (typeof savedGame.expCost !== "undefined") expCost = savedGame.expCost;
-                if (typeof savedGame.coopAmt !== "undefined") coopAmt = savedGame.coopAmt;
-                if (typeof savedGame.coopCost !== "undefined") coopCost = savedGame.coopCost;
-                if (typeof savedGame.shinjiCost !== "undefined") shinjiCost = savedGame.shinjiCost;
-                if (typeof savedGame.crewmateCost !== "undefined") crewmateCost = savedGame.crewmateCost;
-                if (typeof savedGame.gihunCost !== "undefined") gihunCost = savedGame.gihunCost;
-                if (typeof savedGame.dreamCost !== "undefined") dreamCost = savedGame.dreamCost;
-                if (typeof savedGame.freddyCost !== "undefined") freddyCost = savedGame.freddyCost;
-                if (typeof savedGame.shinjiAppear !== "undefined") shinjiAppear = savedGame.shinjiAppear;
-                if (typeof savedGame.crewmateAppear !== "undefined") crewmateAppear = savedGame.crewmateAppear;
-                if (typeof savedGame.gihunAppear !== "undefined") gihunAppear = savedGame.gihunAppear;
-                if (typeof savedGame.dreamAppear !== "undefined") dreamAppear = savedGame.dreamAppear;
-                if (typeof savedGame.freddyAppear !== "undefined") freddyAppear = savedGame.freddyAppear;
-                if (typeof savedGame.shinjiP !== "undefined") shinjiP = savedGame.shinjiP;
-                if (typeof savedGame.crewmateP !== "undefined") crewmateP = savedGame.crewmateP;
-                if (typeof savedGame.gihunP !== "undefined") gihunP = savedGame.gihunP;
-                if (typeof savedGame.dreamP !== "undefined") dreamP = savedGame.dreamP;
-                if (typeof savedGame.freddyP !== "undefined") freddyP = savedGame.freddyP;
 
             }
        
@@ -485,31 +422,7 @@
                 loadgame();
                 updateScorePerSecond();
                 document.getElementById("score").innerHTML = score;
-                document.getElementById("chicCost").innerHTML = chicCost;
-                document.getElementById("farmCost").innerHTML = farmCost;
-                document.getElementById("incCost").innerHTML = incCost;
-                document.getElementById("coopCost").innerHTML = coopCost;
-                document.getElementById("barnCost").innerHTML = barnCost;
-                document.getElementById("landCost").innerHTML = landCost;
-                document.getElementById("expCost").innerHTML = expCost;
-                document.getElementById("chicAmt").innerHTML = chicAmt;
-                document.getElementById("farmAmt").innerHTML = farmAmt;
-                document.getElementById("incAmt").innerHTML = incAmt;
-                document.getElementById("coopAmt").innerHTML = coopAmt;
-                document.getElementById("barnAmt").innerHTML = barnAmt;
-                document.getElementById("landAmt").innerHTML = landAmt;
-                document.getElementById("expAmt").innerHTML = expAmt;
-                document.getElementById("shinjiCost").innerHTML = shinjiCost;
-                document.getElementById("crewmateCost").innerHTML = crewmateCost;
-                document.getElementById("gihunCost").innerHTML = gihunCost;
-                document.getElementById("dreamCost").innerHTML = dreamCost;
-                document.getElementById("freddyCost").innerHTML = freddyCost;
-                document.getElementById("shinjiP").innerHTML = shinjiP;
-                document.getElementById("crewmateP").innerHTML = crewmateP;
-                document.getElementById("gihunP").innerHTML = gihunP;
-                document.getElementById("dreamP").innerHTML = dreamP;
-                document.getElementById("freddyP").innerHTML = freddyP;
-                document.getElementById("scorePerSec").innerHTML = scorePerSec;
+            
 
                     } 
             setInterval(function () {
