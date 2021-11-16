@@ -422,15 +422,22 @@
                 if (typeof savedGame.incCost !== "undefined") incCost = savedGame.incCost;
                 if (typeof savedGame.barnAmt !== "undefined") barnAmt = savedGame.barnAmt;
                 if (typeof savedGame.barnCost !== "undefined") barnCost = savedGame.barnCost;
-                if (typeof savedGame.chicAmt !== "undefined") chicAmt = savedGame.chicAmt;
-                if (typeof savedGame.chicAmt !== "undefined") chicAmt = savedGame.chicAmt;
-                if (typeof savedGame.chicAmt !== "undefined") chicAmt = savedGame.chicAmt;
-                if (typeof savedGame.chicAmt !== "undefined") chicAmt = savedGame.chicAmt;
-                if (typeof savedGame.chicAmt !== "undefined") chicAmt = savedGame.chicAmt;
-                if (typeof savedGame.chicAmt !== "undefined") chicAmt = savedGame.chicAmt;
-                if (typeof savedGame.chicAmt !== "undefined") chicAmt = savedGame.chicAmt;
-                if (typeof savedGame.chicAmt !== "undefined") chicAmt = savedGame.chicAmt;
-                if (typeof savedGame.chicAmt !== "undefined") chicAmt = savedGame.chicAmt;
+                if (typeof savedGame.landAmt !== "undefined") landAmt = savedGame.landAmt;
+                if (typeof savedGame.landCost !== "undefined") landCost = savedGame.landCost;
+                if (typeof savedGame.expAmt !== "undefined") expAmt = savedGame.expAmt;
+                if (typeof savedGame.expCost !== "undefined") expCost = savedGame.expCost;
+                if (typeof savedGame.coopAmt !== "undefined") coopAmt = savedGame.coopAmt;
+                if (typeof savedGame.coopCost !== "undefined") coopCost = savedGame.coopCost;
+                if (typeof savedGame.shinjiCost !== "undefined") shinjiCost = savedGame.shinjiCost;
+                if (typeof savedGame.crewmateCost !== "undefined") crewmateCost = savedGame.crewmateCost;
+                if (typeof savedGame.gihunCost !== "undefined") gihunCost = savedGame.gihunCost;
+                if (typeof savedGame.dreamCost !== "undefined") dreamCost = savedGame.dreamCost;
+                if (typeof savedGame.freddyCost !== "undefined") freddyCost = savedGame.freddyCost;
+                if (typeof savedGame.shinjiAppear !== "undefined") shinjiAppear = savedGame.shinjiAppear;
+                if (typeof savedGame.crewmateAppear !== "undefined") crewmateAppear = savedGame.crewmateAppear;
+                if (typeof savedGame.gihunAppear !== "undefined") gihunAppear = savedGame.gihunAppear;
+                if (typeof savedGame.dreamAppear !== "undefined") dreamAppear = savedGame.dreamAppear;
+                if (typeof savedGame.freddyAppear !== "undefined") freddyAppear = savedGame.freddyAppear;
 
             }
        
@@ -438,8 +445,26 @@
                 loadgame();
                 updateScorePerSecond();
                 document.getElementById("score").innerHTML = score;
-                document.getElementById("nervepersonnelcost").innerHTML = nervepersonnelcost;
-        } 
+                document.getElementById("chicCost").innerHTML = chicCost;
+                document.getElementById("farmCost").innerHTML = farmCost;
+                document.getElementById("incCost").innerHTML = incCost;
+                document.getElementById("coopCost").innerHTML = coopCost;
+                document.getElementById("barnCost").innerHTML = barnCost;
+                document.getElementById("landCost").innerHTML = landCost;
+                document.getElementById("expCost").innerHTML = expCost;
+                document.getElementById("chicAmt").innerHTML = chicAmt;
+                document.getElementById("farmAmt").innerHTML = farmAmt;
+                document.getElementById("incAmt").innerHTML = incAmt;
+                document.getElementById("coopAmt").innerHTML = coopAmt;
+                document.getElementById("barnAmt").innerHTML = barnAmt;
+                document.getElementById("landAmt").innerHTML = landAmt;
+                document.getElementById("expAmt").innerHTML = expAmt;
+                document.getElementById("shinjiCost").innerHTML = shinjiCost;
+                document.getElementById("crewmateCost").innerHTML = crewmateCost;
+                document.getElementById("gihunCost").innerHTML = gihunCost;
+                document.getElementById("dreamCost").innerHTML = dreamCost;
+                document.getElementById("freddyCost").innerHTML = freddyCost;
+                    } 
 
 
 </script>
