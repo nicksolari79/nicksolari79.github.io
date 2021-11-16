@@ -86,6 +86,7 @@
             position:fixed;
             bottom:0px;
             left:550px;
+            pointer-events: none;
         }
         
         #dreamImg{
@@ -135,21 +136,21 @@
                 <h2 id="makechic">Make Chicken Nuggets</h2>
                 <img id="img" src="/Images/21995-9-baby-chicken-transparent-image-thumb (2).png" onclick="addToScore(1)">
                 <span id="score"><b></b></span> <b>Chicken Nuggets</b> <span id="scorePerSec"></span> Nuggets Per Second
-                <br>ㅤㅤㅤㅤㅤㅤㅤㅤ<button onlick="saveGame()">Save</button>
+                <br>ㅤㅤㅤㅤㅤㅤㅤㅤ<button title="This game autosaves every minute" onlick="saveGame()">Save</button>
 
             </div>
             <div class="column">
                 <h2 id="hireworkers">Hire Workers</h2>
                 <br><br><br><br><br><br>
-                ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤCost to Hire: <span id="shinjiCost"></span><button id="shinji">Shinji Ikari</button>
+                ㅤㅤㅤㅤㅤㅤㅤ   ㅤ<span id="shinjiP"></span>ㅤㅤCost to Hire: <span id="shinjiCost"></span><button id="shinji">Shinji Ikari</button>
                 <br><br>
-                ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤCost to Hire: <span id="crewmateCost"></span><button id="crewmate">Crewmate</button>
+                ㅤㅤㅤㅤㅤㅤㅤㅤ <span id="crewmateP"></span>ㅤㅤCost to Hire: <span id="crewmateCost"></span><button id="crewmate">Crewmate</button>
                 <br><br>
-                ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤCost to Hire: <span id="gihunCost"></span><button id="gihun">Seong Gi-Hun</button>
+                ㅤㅤㅤㅤㅤㅤ ㅤㅤ<span id="gihunP"></span>ㅤㅤCost to Hire: <span id="gihunCost"></span><button id="gihun">Seong Gi-Hun</button>
                 <br><br>
-                ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤCost to Hire: <span id="dreamCost"></span><button id="dream">Dream</button>
+                ㅤㅤㅤㅤㅤㅤㅤㅤ <span id="dreamP"></span>ㅤㅤCost to Hire: <span id="dreamCost"></span><button id="dream">Dream</button>
                 <br><br>
-                ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤCost to Hire: <span id="freddyCost"></span><button id="freddy">Freddy Fazbear</button>
+                ㅤㅤㅤㅤㅤㅤㅤㅤ <span id="freddyP"></span>ㅤㅤCost to Hire: <span id="freddyCost"></span><button id="freddy">Freddy Fazbear</button>
                 
 
             </div>
@@ -183,6 +184,11 @@
     var gihunAppear = false;
     var dreamAppear = false;
     var freddyAppear = false;
+    var shinjiP = "✓";
+    var crewmateP = "✓";
+    var gihunP = "✓";
+    var dreamP = "✓";
+    var freddyP = "✓";
     setInterval(idle, 1000);
     document.getElementById("img").addEventListener("click", imgClick);
     document.getElementById("chic").addEventListener("click", buyChickens);
@@ -217,6 +223,7 @@
     document.getElementById("dreamCost").innerText = dreamCost;
     document.getElementById("freddyCost").innerText = freddyCost;
     document.getElementById("scorePerSec").innerText = scorePerSec;
+
     function idle(button) {
         score = score + scorePerSec;
         document.getElementById("score").innerText = score;
@@ -326,6 +333,7 @@
                 scorePerSec=scorePerSec+150
                 document.getElementById("scorePerSec").innerText = scorePerSec;
                 document.getElementById('shinjiImg').style.display='block';
+                document.getElementById("shinjiP").innerText = shinjiP;
         }
         }
         }
@@ -338,6 +346,7 @@
                 scorePerSec=scorePerSec+300
                 document.getElementById("scorePerSec").innerText = scorePerSec;
                 document.getElementById('crewmateImg').style.display='block';
+                document.getElementById("crewmateP").innerText = crewmateP;
         }
         }
         }
@@ -350,6 +359,7 @@
                 scorePerSec=scorePerSec+750
                 document.getElementById("scorePerSec").innerText = scorePerSec;
                 document.getElementById('gihunImg').style.display='block';
+                document.getElementById("gihunP").innerText = gihunP;
         }
         }
         }
@@ -362,6 +372,7 @@
                 scorePerSec=scorePerSec+1000
                 document.getElementById("scorePerSec").innerText = scorePerSec;
                 document.getElementById('dreamImg').style.display='block';
+                document.getElementById("dreamP").innerText = dreamP;
         }
         }
         }
@@ -374,6 +385,7 @@
                 scorePerSec=scorePerSec+2000
                 document.getElementById("scorePerSec").innerText = scorePerSec;
                 document.getElementById('freddyImg').style.display='block';
+                document.getElementById("freddyP").innerText = freddyP;
         }
         }
         }
@@ -405,7 +417,12 @@
                 crewmateAppear: crewmateAppear,
                 gihunAppear: gihunAppear,
                 dreamAppear: dreamAppear,
-                freddyAppear: freddyAppear
+                freddyAppear: freddyAppear,
+                shinjiP: shinjiP,
+                crewmateP: crewmateP,
+                gihunP: gihunP,
+                dreamP: dreamP,
+                freddyP: freddyP,
 
             };
             localStorage.setItem("gameSave", JSON.stringify(gameSave));
@@ -438,6 +455,11 @@
                 if (typeof savedGame.gihunAppear !== "undefined") gihunAppear = savedGame.gihunAppear;
                 if (typeof savedGame.dreamAppear !== "undefined") dreamAppear = savedGame.dreamAppear;
                 if (typeof savedGame.freddyAppear !== "undefined") freddyAppear = savedGame.freddyAppear;
+                if (typeof savedGame.shinjiP !== "undefined") shinjiP = savedGame.shinjiP;
+                if (typeof savedGame.crewmateP !== "undefined") crewmateP = savedGame.crewmateP;
+                if (typeof savedGame.gihunP !== "undefined") gihunP = savedGame.gihunP;
+                if (typeof savedGame.dreamP !== "undefined") dreamP = savedGame.dreamP;
+                if (typeof savedGame.freddyP !== "undefined") freddyP = savedGame.freddyP;
 
             }
        
@@ -464,7 +486,16 @@
                 document.getElementById("gihunCost").innerHTML = gihunCost;
                 document.getElementById("dreamCost").innerHTML = dreamCost;
                 document.getElementById("freddyCost").innerHTML = freddyCost;
+                document.getElementById("shinjiP").innerText = shinjiP;
+                document.getElementById("crewmateP").innerText = crewmateP;
+                document.getElementById("gihunP").innerText = gihunP;
+                document.getElementById("dreamP").innerText = dreamP;
+                document.getElementById("freddyP").innerText = freddyP;
+
                     } 
+            setInterval(function () {
+                saveGame();
+            }, 60000); // 60000 ms = 1m
 
 
 </script>
