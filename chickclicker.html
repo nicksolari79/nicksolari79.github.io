@@ -194,6 +194,7 @@
     var gihunBefore = 0;
     var dreamBefore = 0;
     var freddyBefore = 0; 
+    
     setInterval(idle, 1000);
     document.getElementById("img").addEventListener("click", imgClick);
     document.getElementById("chic").addEventListener("click", buyChickens);
@@ -337,7 +338,6 @@
                 score=score-shinjiCost
                 scorePerSec=scorePerSec+150
                 document.getElementById("scorePerSec").innerText = scorePerSec;
-                shinjiAppear = false
             if(shinjiAppear === false){
                 document.getElementById('shinjiImg').style.display='block';
                 
