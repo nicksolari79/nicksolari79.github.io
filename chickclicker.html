@@ -151,7 +151,8 @@
                 ㅤㅤㅤㅤㅤㅤㅤㅤ <span id="dreamP"></span>ㅤㅤCost to Hire: <span id="dreamCost"></span><button id="dream">Dream</button>
                 <br><br>
                 ㅤㅤㅤㅤㅤㅤㅤㅤ <span id="freddyP"></span>ㅤㅤCost to Hire: <span id="freddyCost"></span><button id="freddy">Freddy Fazbear</button>
-                
+                <br><br>
+                ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ<button id="sp">✓</button><button id="cp">✓</button><button id="gp">✓</button><button id="dp">✓</button><button id="fp">✓</button>
 
             </div>
         </div>
@@ -194,7 +195,11 @@
     var gihunBefore = 0;
     var dreamBefore = 0;
     var freddyBefore = 0; 
-    var shinjiPic = true;
+    var shinjiPic = false;
+    var crewmatePic = false;
+    var gihunPic = false;
+    var dreamPic = false;
+    var freddyPic = false;
     setInterval(idle, 1000);
     document.getElementById("img").addEventListener("click", imgClick);
     document.getElementById("chic").addEventListener("click", buyChickens);
@@ -209,6 +214,11 @@
     document.getElementById("gihun").addEventListener("click", hireGihun);
     document.getElementById("dream").addEventListener("click", hireDream);
     document.getElementById("freddy").addEventListener("click", hireFreddy);
+    document.getElementById("sp").addEventListener("click", shinjiImg);
+    document.getElementById("cp").addEventListener("click", crewmateImg);
+    document.getElementById("gp").addEventListener("click", gihunImg);
+    document.getElementById("dp").addEventListener("click", dreamImg);
+    document.getElementById("fp").addEventListener("click", freddyImg);
     document.getElementById("chicCost").innerText = chicCost;
     document.getElementById("farmCost").innerText = farmCost;
     document.getElementById("incCost").innerText = incCost;
@@ -332,13 +342,16 @@
         }
         // Shinji Ikari
     function hireShinji() {
-        if (score >= shinjiCost){
+        if (score >= shinjiCost, shinjiAppear=false){
                 document.getElementById("shinjiP").innerText = shinjiP;
+                shinjiPic = true
                 shinjiAppear = true
                 score=score-shinjiCost
                 scorePerSec=scorePerSec+150
                 document.getElementById("scorePerSec").innerText = scorePerSec;
         }
+        }
+    function shinjiImg(){
         if(shinjiPic === true){
                 document.getElementById('shinjiImg').style.display='block';
                 
@@ -407,7 +420,16 @@
           function saveGame() {
             var gameSave = {
                 score: score,
-                shinjiPic: shinjiPic
+                shinjiPic: shinjiPic,
+                crewmatePic: crewmatePic,
+                gihunPic: gihunPic,
+                dreamPic: dreamPic,
+                freddyPic: freddyPic,
+                shinjiAppear: shinjiAppear,
+                crewmateAppear: crewmateAppear,
+                gihunAppear: gihunAppear,
+                dreamAppear: dreamAppear,
+                freddyAppear: freddyAppear
             
 
             };
@@ -418,6 +440,16 @@
                 var savedGame = JSON.parse(localStorage.getItem("gameSave"));
                 if (typeof savedGame.score !== "undefined") score = savedGame.score;
                 if (typeof savedGame.shinjiPic !== "undefined") shinjiPic = savedGame.shinjiPic;
+                if (typeof savedGame.crewmatePic !== "undefined") crewmatePic = savedGame.crewmatePic;
+                if (typeof savedGame.gihunPic !== "undefined") gihunPic = savedGame.gihunPic;
+                if (typeof savedGame.dreamPic !== "undefined") dreamPic = savedGame.dreamPic;
+                if (typeof savedGame.freddyPic !== "undefined") freddyPic = savedGame.freddyPic;
+                if (typeof savedGame.shinjiAppear !== "undefined") shinjiAppear = savedGame.shinjiAppear;
+                if (typeof savedGame.crewmateAppear !== "undefined") crewmateAppear = savedGame.crewmateAppear;
+                if (typeof savedGame.gihunAppear !== "undefined") gihunAppear = savedGame.gihunAppear;
+                if (typeof savedGame.dreamAppear !== "undefined") dreamAppear = savedGame.dreamAppear;
+                if (typeof savedGame.freddyAppear !== "undefined") freddyAppear = savedGame.freddyAppear;
+
 
             }
        
@@ -426,6 +458,16 @@
                 updateScorePerSecond();
                 document.getElementById("score").innerHTML = score;
                 document.getElementById("shinjiPic").innerHTML = shinjiPic;
+                document.getElementById("crewmatePic").innerHTML = crewmatePic;
+                document.getElementById("gihunPic").innerHTML = gihunPic;
+                document.getElementById("dreamPic").innerHTML = dreamPic;
+                document.getElementById("freddyPic").innerHTML = freddyPic;
+                document.getElementById("shinjiAppear").innerHTML = shinjiAppear;
+                document.getElementById("crewmateAppear").innerHTML = crewmateAppear;
+                document.getElementById("gihunAppear").innerHTML = gihunAppear;
+                document.getElementById("dreamAppear").innerHTML = dreamAppear;
+                document.getElementById("freddyAppear").innerHTML = freddyAppear;
+
             
 
                     } 
