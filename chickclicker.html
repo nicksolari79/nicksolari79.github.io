@@ -160,7 +160,7 @@
 </body>
 <script>
     var score = 0;
-    var scorePerSec = 0; 
+    var scorePerSec = 0 + (chicAmt) + (farmAmt*5) + (incAmt*10) + (coopAmt*50) + (barnAmt*100) + (landAmt*500) + (expAmt*1000)
     var chicCost = 10;
     var farmCost = 100;
     var chicAmt = 0;
@@ -342,77 +342,87 @@
         }
         // Shinji Ikari
     function hireShinji() {
-        if (score >= shinjiCost, shinjiAppear=false){
+        if (score >= shinjiCost){
+            if (shinjiPic === false){
                 document.getElementById("shinjiP").innerText = shinjiP;
                 shinjiPic = true
-                shinjiAppear = true
                 score=score-shinjiCost
                 scorePerSec=scorePerSec+150
                 document.getElementById("scorePerSec").innerText = scorePerSec;
         }
         }
+        }
     function shinjiImg(){
         if(shinjiPic === true){
                 document.getElementById('shinjiImg').style.display='block';
-                
         }
         }
         // Crewmate
     function hireCrewmate() {
         if (score >= crewmateCost){
-            if(crewmateAppear === false){
-                crewmateAppear = true;
+            if (crewmatePic === false){
+                document.getElementById("crewmateP").innerText = crewmateP;
+                crewmatePic = true
                 score=score-crewmateCost
                 scorePerSec=scorePerSec+300
-                crewmateBefore = 300
                 document.getElementById("scorePerSec").innerText = scorePerSec;
-                document.getElementById('crewmateImg').style.display='block';
-                document.getElementById("crewmateP").innerText = crewmateP;
         }
+        }
+        }
+    function crewmateImg(){
+        if(crewmatePic === true){
+                document.getElementById('crewmateImg').style.display='block';
         }
         }
         // Seong Gi-Hun
     function hireGihun() {
         if (score >= gihunCost){
-            if(gihunAppear === false){
-                gihunAppear = true;
+            if(gihunPic === false){
+                document.getElementById("gihunP").innerText = gihunP;
+                gihunPic = true
                 score=score-gihunCost
                 scorePerSec=scorePerSec+750
-                gihunBefore = 750
                 document.getElementById("scorePerSec").innerText = scorePerSec;
-                document.getElementById('gihunImg').style.display='block';
-                document.getElementById("gihunP").innerText = gihunP;
         }
+        }
+        }
+    function gihunImg(){
+        if(gihunPic === true){
+                document.getElementById('gihunImg').style.display='block';
         }
         }
         // Dream
     function hireDream() {
         if (score >= dreamCost){
-            if(dreamAppear === false){
-                dreamAppear = true;
+            if(dreamPic === false){
+                document.getElementById("dreamP").innerText = dreamP;
+                dreamPic = true
                 score=score-dreamCost
                 scorePerSec=scorePerSec+1000
-                dreamBefore = 1000
                 document.getElementById("scorePerSec").innerText = scorePerSec;
-                document.getElementById('dreamImg').style.display='block';
-                document.getElementById("dreamP").innerText = dreamP;
         }
+        }
+        }
+    function dreamImg(){
+        if(dreamPic === true){
+                document.getElementById('dreamImg').style.display='block';
         }
         }
         // Freddy Fazbear
     function hireFreddy() {
         if (score >= freddyCost){
-            if(freddyAppear === false){
-                freddyAppear = true;
+            if (freddyPic === false){
+                document.getElementById("freddyP").innerText = freddyP;
+                freddyPic = true
                 score=score-freddyCost
                 scorePerSec=scorePerSec+2000
-                freddyBefore = 2000
                 document.getElementById("scorePerSec").innerText = scorePerSec;
-                document.getElementById('freddyImg').style.display='block';
-                document.getElementById("freddyP").innerText = freddyP;
-
-
         }
+        }
+        }
+    function freddyImg(){
+        if(freddyPic === true){
+                document.getElementById('freddyImg').style.display='block';
         }
         }
         // Save Game
@@ -429,7 +439,8 @@
                 crewmateAppear: crewmateAppear,
                 gihunAppear: gihunAppear,
                 dreamAppear: dreamAppear,
-                freddyAppear: freddyAppear
+                freddyAppear: freddyAppear,
+                scorePerSec: scorePerSec
             
 
             };
@@ -449,6 +460,8 @@
                 if (typeof savedGame.gihunAppear !== "undefined") gihunAppear = savedGame.gihunAppear;
                 if (typeof savedGame.dreamAppear !== "undefined") dreamAppear = savedGame.dreamAppear;
                 if (typeof savedGame.freddyAppear !== "undefined") freddyAppear = savedGame.freddyAppear;
+                if (typeof savedGame.scorePerSec !== "undefined") scorePerSec = savedGame.scorePerSec;
+
 
 
             }
@@ -467,13 +480,11 @@
                 document.getElementById("gihunAppear").innerHTML = gihunAppear;
                 document.getElementById("dreamAppear").innerHTML = dreamAppear;
                 document.getElementById("freddyAppear").innerHTML = freddyAppear;
+                document.getElementById("scorePerSec").innerHTML = scorePerSec;
 
             
 
                     } 
-            setInterval(function () {
-                saveGame();
-            }, 60000); // 60000 ms = 1m
 
 
 </script>
