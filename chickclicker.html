@@ -194,7 +194,7 @@
     var gihunBefore = 0;
     var dreamBefore = 0;
     var freddyBefore = 0; 
-    
+    var shinjiPic = true;
     setInterval(idle, 1000);
     document.getElementById("img").addEventListener("click", imgClick);
     document.getElementById("chic").addEventListener("click", buyChickens);
@@ -338,7 +338,7 @@
                 score=score-shinjiCost
                 scorePerSec=scorePerSec+150
                 document.getElementById("scorePerSec").innerText = scorePerSec;
-            if(shinjiAppear === false){
+            if(shinjiPic === true){
                 document.getElementById('shinjiImg').style.display='block';
                 
         }
@@ -407,7 +407,7 @@
           function saveGame() {
             var gameSave = {
                 score: score,
-                shinjiAppear: shinjiAppear
+                shinjiPic: shinjiPic
             
 
             };
@@ -417,7 +417,7 @@
             function loadgame() { 
                 var savedGame = JSON.parse(localStorage.getItem("gameSave"));
                 if (typeof savedGame.score !== "undefined") score = savedGame.score;
-                if (typeof savedGame.shinjiAppear !== "undefined") shinjiAppear = savedGame.shinjiAppear;
+                if (typeof savedGame.shinjiPic !== "undefined") shinjiPic = savedGame.shinjiPic;
 
             }
        
@@ -425,7 +425,7 @@
                 loadgame();
                 updateScorePerSecond();
                 document.getElementById("score").innerHTML = score;
-                document.getElementById("shinjiAppear").innerHTML = shinjiAppear;
+                document.getElementById("shinjiPic").innerHTML = shinjiPic;
             
 
                     } 
