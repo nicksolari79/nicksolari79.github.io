@@ -332,14 +332,13 @@
         // Shinji Ikari
     function hireShinji() {
         if (score >= shinjiCost){
-            score=score-shinjiCost
-                scorePerSec=scorePerSec+150
-                document.getElementById("scorePerSec").innerText = scorePerSec;
-                document.getElementById('shinjiImg').style.display='block';
                 document.getElementById("shinjiP").innerText = shinjiP;
                 shinjiAppear = true
             if(shinjiAppear === true){
+                score=score-shinjiCost
                 document.getElementById('shinjiImg').style.display='block';
+                scorePerSec=scorePerSec+150
+                document.getElementById("scorePerSec").innerText = scorePerSec;
                 
         }
         }
