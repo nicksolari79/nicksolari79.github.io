@@ -332,14 +332,15 @@
         // Shinji Ikari
     function hireShinji() {
         if (score >= shinjiCost){
-            if(shinjiAppear === false){
-                shinjiAppear = true;
-                score=score-shinjiCost
+            score=score-shinjiCost
                 scorePerSec=scorePerSec+150
-                shinjiBefore = 150
                 document.getElementById("scorePerSec").innerText = scorePerSec;
                 document.getElementById('shinjiImg').style.display='block';
                 document.getElementById("shinjiP").innerText = shinjiP;
+                shinjiAppear = true
+            if(shinjiAppear === true){
+                document.getElementById('shinjiImg').style.display='block';
+                
         }
         }
         }
@@ -406,6 +407,7 @@
           function saveGame() {
             var gameSave = {
                 score: score,
+                shinjiAppear: shinjiAppear
             
 
             };
@@ -415,6 +417,7 @@
             function loadgame() { 
                 var savedGame = JSON.parse(localStorage.getItem("gameSave"));
                 if (typeof savedGame.score !== "undefined") score = savedGame.score;
+                if (typeof savedGame.shinjiAppear !== "undefined") shinjiAppear = savedGame.shinjiAppear;
 
             }
        
@@ -422,6 +425,7 @@
                 loadgame();
                 updateScorePerSecond();
                 document.getElementById("score").innerHTML = score;
+                document.getElementById("shinjiAppear").innerHTML = shinjiAppear;
             
 
                     } 
