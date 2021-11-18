@@ -160,7 +160,7 @@
 </body>
 <script>
     var score = 0;
-    var scorePerSec = 0 + (chicAmt) + (farmAmt*5) + (incAmt*10) + (coopAmt*50) + (barnAmt*100) + (landAmt*500) + (expAmt*1000)
+    var scorePerSec = 0
     var chicCost = 10;
     var farmCost = 100;
     var chicAmt = 0;
@@ -440,7 +440,30 @@
                 gihunAppear: gihunAppear,
                 dreamAppear: dreamAppear,
                 freddyAppear: freddyAppear,
-                scorePerSec: scorePerSec
+                scorePerSec: scorePerSec,
+                chicAmt: chicAmt,
+                chicCost: chicCost,
+                farmAmt: farmAmt,
+                farmCost: farmCost,
+                incAmt: incAmt,
+                incCost: incCost,
+                coopAmt: coopAmt,
+                coopCost: coopCost,
+                barnAmt: barnAmt,
+                barnCost: barnAmt,
+                landAmt: landAmt,
+                landCost: landCost,
+                expAmt: expCost,
+                shinjiCost: shinjiCost,
+                crewmateCost: crewmateCost,
+                gihunCost: gihunCost,
+                dreamCost: dreamCost,
+                freddyCost: freddyCost,
+                shinjiP: shinjiP,
+                crewmateP: crewmateP,
+                gihunP: gihunP,
+                dreamP: dreamP,
+                freddyP: freddyP
             
 
             };
@@ -459,7 +482,30 @@
                 if (typeof savedGame.crewmateAppear !== "undefined") crewmateAppear = savedGame.crewmateAppear;
                 if (typeof savedGame.gihunAppear !== "undefined") gihunAppear = savedGame.gihunAppear;
                 if (typeof savedGame.dreamAppear !== "undefined") dreamAppear = savedGame.dreamAppear;
-                if (typeof savedGame.freddyAppear !== "undefined") freddyAppear = savedGame.freddyAppear;
+                if (typeof savedGame.chicCost !== "undefined") chicCost = savedGame.chicCost;
+                if (typeof savedGame.chicAmt !== "undefined") chicAmt = savedGame.chicAmt;
+                if (typeof savedGame.farmCost !== "undefined") farmCost = savedGame.farmCost;
+                if (typeof savedGame.farmAmt !== "undefined") farmAmt = savedGame.farmAmt;
+                if (typeof savedGame.incCost !== "undefined") incCost = savedGame.incCost;
+                if (typeof savedGame.incAmt !== "undefined") incAmt = savedGame.incAmt;
+                if (typeof savedGame.coopCost !== "undefined") coopCost = savedGame.coopCost;
+                if (typeof savedGame.coopAmt !== "undefined") coopAmt = savedGame.coopAmt;
+                if (typeof savedGame.barnCost !== "undefined") barnCost = savedGame.barnCost;
+                if (typeof savedGame.barnAmt !== "undefined") barnAmt = savedGame.barnAmt;
+                if (typeof savedGame.landCost !== "undefined") landCost = savedGame.landCost;
+                if (typeof savedGame.landAmt !== "undefined") landAmt = savedGame.landAmt;
+                if (typeof savedGame.expAmt !== "undefined") expAmt = savedGame.expAmt;
+                if (typeof savedGame.expCost !== "undefined") expCost = savedGame.expCost;
+                if (typeof savedGame.shinjiP !== "undefined") shinjiP = savedGame.shinjiP;
+                if (typeof savedGame.crewmateP !== "undefined") crewmateP = savedGame.crewmateP;
+                if (typeof savedGame.gihunP !== "undefined") gihunP = savedGame.gihunP;
+                if (typeof savedGame.dreamP !== "undefined") dreamP = savedGame.dreamP;
+                if (typeof savedGame.freddyP !== "undefined") freddyP = savedGame.freddyP;
+                if (typeof savedGame.freddyP !== "undefined") freddyP = savedGame.freddyP;
+                if (typeof savedGame.freddyP !== "undefined") freddyP = savedGame.freddyP;
+                if (typeof savedGame.freddyP !== "undefined") freddP = savedGame.gihunCost;
+                if (typeof savedGame.dreamCost !== "undefined") dreamCost = savedGame.dreamCost;
+                if (typeof savedGame.freddyCost !== "undefined") freddyCost = savedGame.freddyCost;
                 if (typeof savedGame.scorePerSec !== "undefined") scorePerSec = savedGame.scorePerSec;
 
 
@@ -480,12 +526,35 @@
                 document.getElementById("gihunAppear").innerHTML = gihunAppear;
                 document.getElementById("dreamAppear").innerHTML = dreamAppear;
                 document.getElementById("freddyAppear").innerHTML = freddyAppear;
+                document.getElementById("chicCost").innerHTML = chicCost;
+                document.getElementById("farmCost").innerHTML = farmCost;
+                document.getElementById("incCost").innerHTML = incCost;
+                document.getElementById("coopCost").innerHTML = coopCost;
+                document.getElementById("barnCost").innerHTML = barnCost;
+                document.getElementById("landCost").innerHTML = landCost;
+                document.getElementById("expCost").innerHTML = expCost;
+                document.getElementById("chicAmt").innerHTML = chicAmt;
+                document.getElementById("farmAmt").innerHTML = farmAmt;
+                document.getElementById("incAmt").innerHTML  = incAmt;
+                document.getElementById("coopAmt").innerHTML = coopAmt;
+                document.getElementById("barnAmt").innerHTML = barnAmt;
+                document.getElementById("landAmt").innerHTML = landAmt;
+                document.getElementById("expAmt").innerHTML = expAmt;
+                document.getElementById("shinjiCost").innerHTML = shinjiCost;
+                document.getElementById("crewmateCost").innerHTML = crewmateCost;
+                document.getElementById("gihunCost").innerHTML = gihunCost;
+                document.getElementById("dreamCost").innerHTML = dreamCost;
+                document.getElementById("freddyCost").innerHTML = freddyCost;
                 document.getElementById("scorePerSec").innerHTML = scorePerSec;
 
             
 
                     } 
 
+            function updateScorePerSecond() {
+                scorePerSecond = chicAmt + farmAmt*5 + incAmt*10 + coopAmt*50 + barnAmt*100 + landAmt*500 + expAmt*1000;
+                document.getElementById("scorepersecond").innerHTML = scorePerSecond;
+        }
 
 </script>
 </html>
