@@ -152,7 +152,7 @@
                 <br><br>
                 ㅤㅤㅤㅤㅤㅤㅤㅤ <span id="freddyP"></span>ㅤㅤCost to Hire: <span id="freddyCost"></span><button id="freddy">Freddy Fazbear</button>
                 <br><br>
-                ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ<button id="sp">✓</button><button id="cp">✓</button><button id="gp">✓</button><button id="dp">✓</button><button id="fp">✓</button>
+                ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ<button id="sp">✓</button><button id="cp">✓</button><button id="gp">✓</button><button id="dp">✓</button><button id="fp">✓</button>
 
             </div>
         </div>
@@ -543,6 +543,11 @@
                 if (typeof savedGame.ga !== "undefined") ga = savedGame.ga;
                 if (typeof savedGame.da !== "undefined") da = savedGame.da;
                 if (typeof savedGame.fa !== "undefined") fa = savedGame.fa;
+                if (typeof savedGame.sp !== "undefined") sp = savedGame.sp;
+                if (typeof savedGame.cp !== "undefined") cp = savedGame.cp;
+                if (typeof savedGame.gp !== "undefined") gp = savedGame.gp;
+                if (typeof savedGame.dp !== "undefined") dp = savedGame.dp;
+                if (typeof savedGame.fp !== "undefined") fp = savedGame.fp;
                 document.getElementById("chicCost").innerHTML = chicCost;
                 document.getElementById("farmCost").innerHTML = farmCost;
                 document.getElementById("incCost").innerHTML = incCost;
@@ -557,21 +562,13 @@
                 document.getElementById("barnAmt").innerHTML = barnAmt;
                 document.getElementById("landAmt").innerHTML = landAmt;
                 document.getElementById("expAmt").innerHTML = expAmt;
-                document.getElementById("shinjiAppear").innerHTML = shinjiAppear;
-                document.getElementById("crewmateAppear").innerHTML = crewmateAppear;
-                document.getElementById("gihunAppear").innerHTML = gihunAppear;
-                document.getElementById("dreamAppear").innerHTML = dreamAppear;
-                document.getElementById("freddyAppear").innerHTML = freddyAppear;
                 document.getElementById("shinjiP").innerHTML = shinjiP;
                 document.getElementById("crewmateP").innerHTML = crewmateP;
                 document.getElementById("gihunP").innerHTML = gihunP;
                 document.getElementById("dreamP").innerHTML = dreamP;
                 document.getElementById("freddyP").innerHTML = freddyP;
-                document.getElementById("shinjiAdd").innerHTML = shinjiAdd;
-                document.getElementById("crewmateAdd").innerHTML = crewmateAdd;
-                document.getElementById("gihunAdd").innerHTML = gihunAdd;
-                document.getElementById("dreamAdd").innerHTML = dreamAdd;
-                document.getElementById("freddyAdd").innerHTML = freddyAdd;
+           
+                
                 
 
 
@@ -612,17 +609,16 @@
                 document.getElementById("gihunCost").innerHTML = gihunCost;
                 document.getElementById("dreamCost").innerHTML = dreamCost;
                 document.getElementById("freddyCost").innerHTML = freddyCost;
-                document.getElementById("shinjiP").innerHTML = shinjiP;
-                document.getElementById("crewmateP").innerHTML = crewmateP;
-                document.getElementById("gihunP").innerHTML = gihunP;
-                document.getElementById("dreamP").innerHTML = dreamP;
-                document.getElementById("freddyP").innerHTML = freddyP;
                 document.getElementById("shinjiAdd").innerHTML = shinjiAdd;
                 document.getElementById("crewmateAdd").innerHTML = crewmateAdd;
                 document.getElementById("gihunAdd").innerHTML = gihunAdd;
                 document.getElementById("dreamAdd").innerHTML = dreamAdd;
                 document.getElementById("freddyAdd").innerHTML = freddyAdd;
-                
+                document.getElementById("sp").addEventListener("click", shinjiImg);
+                document.getElementById("cp").addEventListener("click", crewmateImg);
+                document.getElementById("gp").addEventListener("click", gihunImg);
+                document.getElementById("dp").addEventListener("click", dreamImg);
+                document.getElementById("fp").addEventListener("click", freddyImg);
 
                 
                
