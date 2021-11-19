@@ -200,7 +200,7 @@
     var gihunPic = false;
     var dreamPic = false;
     var freddyPic = false;
-    var shinjiAdd = 130;
+    var shinjiAdd = 150;
     var crewmateAdd = 300;
     var gihunAdd = 750;
     var dreamAdd = 1000;
@@ -465,7 +465,7 @@
                 coopAmt: coopAmt,
                 coopCost: coopCost,
                 barnAmt: barnAmt,
-                barnCost: barnAmt,
+                barnCost: barnCost,
                 landAmt: landAmt,
                 landCost: landCost,
                 expAmt: expAmt,
@@ -490,6 +490,7 @@
                 ga: ga,
                 da: da,
                 fa: fa
+                
             
 
             };
@@ -542,6 +543,36 @@
                 if (typeof savedGame.ga !== "undefined") ga = savedGame.ga;
                 if (typeof savedGame.da !== "undefined") da = savedGame.da;
                 if (typeof savedGame.fa !== "undefined") fa = savedGame.fa;
+                document.getElementById("chicCost").innerHTML = chicCost;
+                document.getElementById("farmCost").innerHTML = farmCost;
+                document.getElementById("incCost").innerHTML = incCost;
+                document.getElementById("coopCost").innerHTML = coopCost;
+                document.getElementById("barnCost").innerHTML = barnCost;
+                document.getElementById("landCost").innerHTML = landCost;
+                document.getElementById("expCost").innerHTML = expCost;
+                document.getElementById("chicAmt").innerHTML = chicAmt;
+                document.getElementById("farmAmt").innerHTML = farmAmt;
+                document.getElementById("incAmt").innerHTML  = incAmt;
+                document.getElementById("coopAmt").innerHTML = coopAmt;
+                document.getElementById("barnAmt").innerHTML = barnAmt;
+                document.getElementById("landAmt").innerHTML = landAmt;
+                document.getElementById("expAmt").innerHTML = expAmt;
+                document.getElementById("shinjiAppear").innerHTML = shinjiAppear;
+                document.getElementById("crewmateAppear").innerHTML = crewmateAppear;
+                document.getElementById("gihunAppear").innerHTML = gihunAppear;
+                document.getElementById("dreamAppear").innerHTML = dreamAppear;
+                document.getElementById("freddyAppear").innerHTML = freddyAppear;
+                document.getElementById("shinjiP").innerHTML = shinjiP;
+                document.getElementById("crewmateP").innerHTML = crewmateP;
+                document.getElementById("gihunP").innerHTML = gihunP;
+                document.getElementById("dreamP").innerHTML = dreamP;
+                document.getElementById("freddyP").innerHTML = freddyP;
+                document.getElementById("shinjiAdd").innerHTML = shinjiAdd;
+                document.getElementById("crewmateAdd").innerHTML = crewmateAdd;
+                document.getElementById("gihunAdd").innerHTML = gihunAdd;
+                document.getElementById("dreamAdd").innerHTML = dreamAdd;
+                document.getElementById("freddyAdd").innerHTML = freddyAdd;
+                
 
 
 
@@ -591,6 +622,8 @@
                 document.getElementById("gihunAdd").innerHTML = gihunAdd;
                 document.getElementById("dreamAdd").innerHTML = dreamAdd;
                 document.getElementById("freddyAdd").innerHTML = freddyAdd;
+                
+
                 
                
 
