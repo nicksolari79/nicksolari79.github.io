@@ -135,24 +135,24 @@
             <div class="column">
                 <h2 id="makechic">Make Chicken Nuggets</h2>
                 <img id="img" src="/Images/21995-9-baby-chicken-transparent-image-thumb (2).png" onclick="addToScore(1)">
-                <span id="score"><b></b></span> <b>Chicken Nuggets</b> <span id="scorePerSec"></span> Nuggets Per Second
+                <span id="score"><b></b></span> <b>Chicken Nuggets</b> <span id="scorePerSec"></span> <b>Nuggets Per Second</b>
                 <br>ㅤㅤㅤㅤㅤㅤㅤㅤ<button title="This game autosaves every minute" onclick="saveGame()">Save</button>
 
             </div>
             <div class="column">
                 <h2 id="hireworkers">Hire Workers</h2>
                 <br><br><br><br><br><br>
-                ㅤㅤㅤㅤㅤㅤㅤ   ㅤ<span id="shinjiP"></span>ㅤㅤCost to Hire: <span id="shinjiCost"></span><button id="shinji">Shinji Ikari</button>
+                ㅤㅤㅤㅤㅤㅤㅤ   ㅤ<span id="shinjiP"></span>ㅤㅤCost to Hire: <span id="shinjiCost"></span><button id="shinji" title="150PerSec">Shinji Ikari</button>
                 <br><br>
-                ㅤㅤㅤㅤㅤㅤㅤㅤ <span id="crewmateP"></span>ㅤㅤCost to Hire: <span id="crewmateCost"></span><button id="crewmate">Crewmate</button>
+                ㅤㅤㅤㅤㅤㅤㅤㅤ <span id="crewmateP"></span>ㅤㅤCost to Hire: <span id="crewmateCost"></span><button id="crewmate" title="300PerSec">Crewmate</button>
                 <br><br>
-                ㅤㅤㅤㅤㅤㅤ ㅤㅤ<span id="gihunP"></span>ㅤㅤCost to Hire: <span id="gihunCost"></span><button id="gihun">Seong Gi-Hun</button>
+                ㅤㅤㅤㅤㅤㅤ ㅤㅤ<span id="gihunP"></span>ㅤㅤCost to Hire: <span id="gihunCost"></span><button id="gihun" title ="750PerSec">Seong Gi-Hun</button>
                 <br><br>
-                ㅤㅤㅤㅤㅤㅤㅤㅤ <span id="dreamP"></span>ㅤㅤCost to Hire: <span id="dreamCost"></span><button id="dream">Dream</button>
+                ㅤㅤㅤㅤㅤㅤㅤㅤ <span id="dreamP"></span>ㅤㅤCost to Hire: <span id="dreamCost"></span><button id="dream" title ="1000PerSec">Dream</button>
                 <br><br>
-                ㅤㅤㅤㅤㅤㅤㅤㅤ <span id="freddyP"></span>ㅤㅤCost to Hire: <span id="freddyCost"></span><button id="freddy">Freddy Fazbear</button>
+                ㅤㅤㅤㅤㅤㅤㅤㅤ <span id="freddyP"></span>ㅤㅤCost to Hire: <span id="freddyCost"></span><button id="freddy" title ="2000PerSec">Freddy Fazbear</button>
                 <br><br>
-                ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ<button id="sp">✓</button><button id="cp">✓</button><button id="gp">✓</button><button id="dp">✓</button><button id="fp">✓</button>
+                ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ<button id="sp" title="Shinji">✓</button><button id="cp" title="Crewmate">✓</button><button id="gp" title ="Gi-Hun">✓</button><button id="dp" title ="Dream">✓</button><button id="fp" title ="Freddy">✓</button>
 
             </div>
         </div>
@@ -626,6 +626,10 @@
             
 
                     } 
+            //save game//
+        setInterval(function () {
+            saveGame();
+        }, 60000); // 60000 ms = 60 sec
 
             function updateScorePerSecond() {
                 scorePerSec = (chicAmt) + (farmAmt*5) + (incAmt*10) + (coopAmt*50) + (barnAmt*100) + (landAmt*500) + (expAmt*1000) + (shinjiAdd*sa) + (crewmateAdd*ca) + (gihunAdd*ga) + (dreamAdd*da) + (freddyAdd*fa);
