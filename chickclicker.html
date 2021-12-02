@@ -72,6 +72,7 @@
             display:none;
             position:fixed;
             bottom:0px;
+            pointer-events: none;
         }
 
         #crewmateImg{
@@ -79,6 +80,7 @@
             position:fixed;
             bottom:0px;
             left:300px;
+            pointer-events: none;
         }
 
         #gihunImg{
@@ -94,6 +96,7 @@
             position:fixed;
             bottom:0px;
             left:800px;
+            pointer-events: none;
         }
 
         #freddyImg{
@@ -101,6 +104,7 @@
             position:fixed;
             bottom:0px;
             left:1050px;
+            pointer-events: none;
         }
 
         #home{
@@ -139,10 +143,10 @@
 
             </div>
             <div class="column">
-                <h2 id="makechic">Make Chicken Nuggets</h2>
+                <h2 id="makechic">ㅤㅤMake Chicken Nuggets</h2>
                 <img id="img" src="/Images/21995-9-baby-chicken-transparent-image-thumb (2).png" onclick="addToScore(1)">
-                <span id="score"><b></b></span> <b>Chicken Nuggets</b> <span id="scorePerSec"></span> <b>Nuggets Per Second</b>
-                <br>ㅤㅤㅤㅤㅤㅤㅤㅤ<button title="This game autosaves every minute" onclick="saveGame()">Save</button>
+                ㅤ<span id="score"><b></b></span> <b>Chicken Nuggets</b> <span id="scorePerSec"></span> <b>Nuggets Per Second</b>
+                <br>ㅤㅤㅤㅤㅤㅤㅤㅤ<button title="This game autosaves every 30 seconds" onclick="saveGame()">Save</button>
 
             </div>
             <div class="column">
@@ -158,7 +162,7 @@
                 <br><br>
                 ㅤㅤㅤㅤㅤㅤㅤㅤ <span id="freddyP"></span>ㅤㅤCost to Hire: <span id="freddyCost"></span><button id="freddy" title ="2000PerSec">Freddy Fazbear</button>
                 <br><br>
-                ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ<button id="sp" title="Click if hired Shinji">✓</button><button id="cp" title="Click if hired Crewmate">✓</button><button id="gp" title ="Click if hired Gi-Hun">✓</button><button id="dp" title ="Click if hired Dream">✓</button><button id="fp" title ="Click if hired Freddy">✓</button><a href=index.html> <img src="Images/home.png" id="home"></a>
+                ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ<button id="sp" title="Click if hired Shinji">✓</button><button id="cp" title="Click if hired Crewmate">✓</button><button id="gp" title ="Click if hired Gi-Hun">✓</button><button id="dp" title ="Click if hired Dream">✓</button><button id="fp" title ="Click if hired Freddy">✓</button><a href=index.html> <img src="Images/home.png" title="Home" id="home"></a>
 
             </div>
         </div>
@@ -181,9 +185,9 @@
     var landAmt = 0;
     var expCost = 500000;
     var expAmt = 0;
-    var shinjiCost = 25000;
-    var crewmateCost = 75000;
-    var gihunCost = 150000;
+    var shinjiCost = 50000;
+    var crewmateCost = 100000;
+    var gihunCost = 200000;
     var dreamCost = 500000;
     var freddyCost = 1000000;
     var shinjiAppear = false;
@@ -623,7 +627,7 @@
             //save game//
         setInterval(function () {
             saveGame();
-        }, 60000); // 60000 ms = 60 sec
+        }, 60000); // 30000 ms = 30 sec
 
             function updateScorePerSecond() {
                 scorePerSec = (chicAmt) + (farmAmt*5) + (incAmt*10) + (coopAmt*50) + (barnAmt*100) + (landAmt*500) + (expAmt*1000) + (shinjiAdd*sa) + (crewmateAdd*ca) + (gihunAdd*ga) + (dreamAdd*da) + (freddyAdd*fa);
