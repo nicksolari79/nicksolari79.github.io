@@ -3,28 +3,37 @@
         <style>
             #rcar{
                 float: left;
-                height: 170px;
+                height: 75px;
+                position: absolute;
+                top: 30px;
 
             }
             #bcar{
                 float: left;
                 height: 140px;
+                position: absolute;
+                top: 200px;
 
             }
             #gcar{
                 float: left;
                 height: 47px;
+                position: absolute;
+                top: 390px;
 
             }
             #pcar{
                 float: left;
                 height: 140px;
+                position: absolute;
+                top: 517px;
 
             }
             body{
-                background-image:url(Images/Capture.PNG);
+                background-image:url(Images/racetrack.PNG);
                 background-repeat: no-repeat;
                 background-size: cover;
+                background-attachment: fixed;
         
             }
         </style>
@@ -32,11 +41,8 @@
     </head>
     <body>
         <img id="rcar" src ="Images/redcar.png">
-        <br><br><br><br><br><br><br><br><br><br><br><br>
         <img id="pcar" src ='Images/purplecar.png'>
-        <br><br><br><br><br><br><br><br><br><br>
         <img id="bcar" src ="Images/bluecar.png">
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         <img id="gcar" src ="Images/greencar.png">
         
 
@@ -46,6 +52,9 @@
         
         function keydownHandler(e){
             console.log(e.key)
+            if("w"===e.key){
+                rcar.style.left="100px"
+            }
         }
     </script>
 </html>
