@@ -1,0 +1,372 @@
+<html>
+    <head>
+        <style>
+            #rcar{
+                float: left;
+                height: 13%;
+                position: absolute;
+                top: 7%;
+                display:none;
+
+            }
+            #bcar{
+                float: left;
+                height: 23%;
+                position: absolute;
+                top: 28%;
+                display:none;
+
+            }
+            #gcar{
+                float: left;
+                height: 8%;
+                position: absolute;
+                top: 60%;
+                display:none;
+
+            }
+            #pcar{
+                float: left;
+                height: 23%;
+                position: absolute;
+                top: 77%;
+                display:none;
+
+            }
+            body{
+                background-image:url(Images/racetrack.PNG);
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-attachment: fixed;
+        
+            }
+            p{
+                text-align: center;
+                margin: auto;
+                width: 20%;
+                transform: translate(-5%, -50%);
+                color: white;
+                background-color: black;
+            }
+            #enter{
+                height: 15%;
+                position: absolute;
+                top: 55%;
+                left: 20%;
+                display:none;
+            }
+            #w{
+                height:10%;
+                position: absolute;
+                top: 7%;
+                left: 20%;
+                display:none;
+                
+            }
+            #space{
+                height:5%;
+                position: absolute;
+                top: 35%;
+                left: 20%;
+                display:none;
+                width: 15%;
+                
+            }
+            #up{
+                height:10%;
+                position: absolute;
+                top: 85%;
+                left: 20%;
+                display:none;
+                
+            }
+            #rwin{
+                top: 40%;
+                left: 40%;
+                position: absolute;
+                background-color: red;
+                width: 20%;
+                height: 20%;
+                text-align: center;
+                border-style: solid;
+                border-radius: 25px;
+                border-color: black;
+                display:none;
+
+
+            }
+            #bwin{
+                top: 40%;
+                left: 40%;
+                position: absolute;
+                background-color: blue;
+                width: 20%;
+                height: 20%;
+                text-align: center;
+                border-style: solid;
+                border-radius: 25px;
+                border-color: black;
+                display:none;
+
+            }
+            #gwin{
+                top: 40%;
+                left: 40%;
+                position: absolute;
+                background-color: darkgreen;
+                width: 20%;
+                height: 20%;
+                text-align: center;
+                border-style: solid;
+                border-radius: 25px;
+                border-color: black;
+                display:none;
+
+            }
+            #pwin{
+                top: 40%;
+                left: 40%;
+                position: absolute;
+                background-color: purple;
+                width: 20%;
+                height: 20%;
+                text-align: center;
+                border-style: solid;
+                border-radius: 25px;
+                border-color: black;
+                display:none;
+
+            }
+            #title{
+                top: 40%;
+                left: 40%;
+                position: absolute;
+                background-color: black;
+                width: 20%;
+                height: 30%;
+                text-align: center;
+                border-style: solid;
+                border-radius: 25px;
+                border-color: white;
+            }
+            #titlet{
+                width: 50%;
+                transform: translate(0%, 10%);
+                font-size:30pt;
+                font-family:impact;
+            }
+            #rwintext{
+                width: 50%;
+                transform: translate(0%, 90%);
+                
+            }
+            #bwintext{
+                width: 50%;
+                transform: translate(0%, 90%);
+                
+            }
+            #gwintext{
+                width: 50%;
+                transform: translate(0%, 90%);
+                
+            }
+            #pwintext{
+                width: 50%;
+                transform: translate(0%, 90%);
+                
+            }
+            #tp{
+                height: 20%;
+                width: 40%;
+                border-color: white;
+                border-radius: 5px;
+                font-family: impact;
+                font-size: 15pt;
+                background-color: white;
+            }
+            #fp{
+                height: 20%;
+                width: 40%;
+                border-color: white;
+                border-radius: 5px;
+                font-family: impact;
+                font-size: 15pt;
+                background-color: white;
+            }
+            #wbutton{
+                height: 30%;
+                width: 40%;
+                border-color: black;
+                border-radius: 5px;
+                font-family: impact;
+                font-size: 15pt;
+            }
+        </style>
+
+    </head>
+    <body>
+        <img id="rcar" src ="Images/redcar.png"> <img id="w" src="Images/w.png">
+        <img id="pcar" src ='Images/purplecar.png'> <img id="up" src="Images/cursor-up.png">
+        <img id="bcar" src ="Images/bluecar.png"> <img id="space" src="Images/spacebar.png">
+        <img id="gcar" src ="Images/greencar.png"> <img id="enter" src="Images/enter.png">
+        <p id="timer"><b>Time:</b> <span id="time"></span></p>
+        <audio id="honk"><source src="Audio/carhonk.mp3" type="audio/mpeg"></source></audio>
+        <audio id="vic"><source src="Audio/victory.mp3" type="audio/mpeg"></source></audio>
+        <audio id="vroom"><source src="Audio/vroom.mp3" type="audio/mpeg"></source></audio>
+
+        <div id="rwin"><p id="rwintext">Red Wins!</p><br><br><button id="wbutton" type="button" onclick="refresh()">Play again!</button></div>
+        <div id="bwin"><p id="bwintext">Blue Wins!</p><br><br><button id="wbutton" type="button" onclick="refresh()">Play again!</button></div>
+        <div id="gwin"><p id="gwintext">Green Wins!</p><br><br><button id="wbutton" type="button" onclick="refresh()">Play again!</button></div>
+        <div id="pwin"><p id="pwintext">Purple Wins!</p><br><br><button id="wbutton" type="button" onclick="refresh()">Play again!</button></div>
+        <div id="title"><p id="titlet">Start</p><br><button id="tp" type="button" onclick="twoplayer()">2 Player</button><br><br><button id="fp" type="button" onclick="fourplayer()">4 Player</button ></div>
+    </body>
+    <script>
+        document.addEventListener("keyup",keyupHandler)
+        var rcarx = 0
+        var bcarx = 0
+        var gcarx = 0
+        var pcarx = 0
+        var time = 0
+        var acc = 0
+        var win = false
+        var drv = false
+        var tmr = true
+        setInterval(timer,1000)
+        function timer(){
+            if(tmr===false){
+            time=time+1
+            document.getElementById("time").innerHTML = time;
+            }
+        }
+    
+        function keyupHandler(e){
+            console.log(e.key)
+            if(win===false){
+            if("w"===e.key){
+                rcarx = rcarx + 20
+                rcar.style.left= rcarx + "px"
+                document.getElementById('w').style.display='none';
+                tmr = false;
+                if(rcarx>=1125){
+                    rcarx=1125
+                    rwin()
+                
+                }
+                if(drv===false){
+                document.getElementById("vroom");
+                var audio = new Audio("audio/vroom.mp3");
+                vroom.play();}
+            }
+            if(" "===e.key){
+                bcarx = bcarx + 20
+                bcar.style.left= bcarx + "px"
+                document.getElementById('space').style.display='none';
+                tmr = false;
+                if(bcarx>=1125){
+                    bcarx=1125
+                    bwin()
+                
+                }
+                if(drv===false){
+                document.getElementById("vroom");
+                var audio = new Audio("audio/vroom.mp3");
+                vroom.play();}
+            }
+            if("Enter"===e.key){
+                gcarx = gcarx + 20
+                gcar.style.left= gcarx + "px"
+                document.getElementById('enter').style.display='none';
+                tmr = false;
+                if(gcarx>=1125){
+                    gcarx=1125
+                    gwin()
+                    
+                }
+                if(drv===false){
+                document.getElementById("vroom");
+                var audio = new Audio("audio/vroom.mp3");
+                vroom.play();}
+            }
+            if("ArrowUp"===e.key){
+                pcarx = pcarx + 20
+                pcar.style.left= pcarx + "px"
+                document.getElementById('up').style.display='none';
+                tmr = false;
+                if(pcarx>=1125){
+                    pcarx=1125
+                    pwin()
+                }
+                if(drv===false){
+                document.getElementById("vroom");
+                var audio = new Audio("audio/vroom.mp3");
+                vroom.play();}
+            }
+            if("q"===e.key){
+                document.getElementById("honk")
+                var audio = new Audio("audio/carhonk.mp3");
+                honk.play();
+
+            }
+            
+        }
+        }
+        function refresh(){
+            window.location.reload();
+        } 
+        function rwin(){
+            document.getElementById('rwin').style.display='block';
+            document.getElementById("vic")
+                var audio = new Audio("audio/victory.mp3");
+                vic.play();
+                win = true;
+                drv = false;
+                tmr = true;
+        }
+        function bwin(){
+            document.getElementById('bwin').style.display='block';
+            document.getElementById("vic")
+                var audio = new Audio("audio/victory.mp3");
+                vic.play();
+                win = true;
+                drv = false;
+                tmr = true;
+        }
+        function gwin(){
+            document.getElementById('gwin').style.display='block';
+            document.getElementById("vic")
+                var audio = new Audio("audio/victory.mp3");
+                vic.play();
+                win = true;
+                drv = false;
+                tmr = true;
+        }
+        function pwin(){
+            document.getElementById('pwin').style.display='block';
+            document.getElementById("vic")
+                var audio = new Audio("audio/victory.mp3");
+                vic.play();
+                win = true;
+                drv = false;
+                tmr = true;
+        }
+        function twoplayer(){
+            document.getElementById('w').style.display='block';
+            document.getElementById('rcar').style.display='block';
+            document.getElementById('enter').style.display='block';
+            document.getElementById('gcar').style.display='block';
+            document.getElementById('title').style.display='none';
+            
+        }
+        function fourplayer(){
+            document.getElementById('w').style.display='block';
+            document.getElementById('rcar').style.display='block';
+            document.getElementById('enter').style.display='block';
+            document.getElementById('gcar').style.display='block';
+            document.getElementById('space').style.display='block';
+            document.getElementById('up').style.display='block';
+            document.getElementById('bcar').style.display='block';
+            document.getElementById('pcar').style.display='block';
+            document.getElementById('title').style.display='none';
+        }
+    </script>
+</html>
