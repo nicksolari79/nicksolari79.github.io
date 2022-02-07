@@ -8,10 +8,6 @@
             display: block;
         }
 
-        p {
-            color: blue;
-        }
-
         body {
             color: red;
         }
@@ -123,14 +119,15 @@
             float:right
         }
 
+        
     </style>
 </head>
 <body>
     <main>
         <div class="row">
             <div class="column">
-                <h2>Buy Upgrades</h2>
-                <br><br>
+                <h2 id="h2">Buy Upgrades</h2>
+                <br><br><div id="all">
                 <button id="chic" title=1PerSec>Breed Chickens</button> Cost: <span id="chicCost"></span> Amount: <span id="chicAmt"></span>
                 <br></br>
                 <button id="farm" title=5PerSec>Hire Farmers</button> Cost: <span id="farmCost"></span> Amount: <span id="farmAmt"></span>
@@ -143,7 +140,7 @@
                 <br></br>
                 <button id="land" title = 500PerSec>Acquire Land</button> Cost: <span id="landCost"></span> Amount: <span id="landAmt"></span>
                 <br></br>
-                <button id="expand" title = 1000PerSec>Expand Nugget Empire</button> Cost: <span id="expCost"></span> Amount: <span id="expAmt"></span>
+                <button id="expand" title = 1000PerSec>Expand Nugget Empire</button> Cost: <span id="expCost"></span> Amount: <span id="expAmt"></span></div>
                 <br><br><br><br><br><br><br><br>
                 <img id="shinjiImg" src="Images/farmerShinji (2).png" >
                 <img id="crewmateImg" src="Images/farmerCrewmate.png" >
@@ -154,25 +151,25 @@
             </div>
             <div class="column">
                 <h2 id="makechic">ㅤㅤMake Chicken Nuggets</h2>
-                <img id="img" src="/Images/21995-9-baby-chicken-transparent-image-thumb (2).png" onclick="addToScore(1)">
-                ㅤ<span id="score"><b></b></span> <b>Chicken Nuggets</b> <span id="scorePerSec"></span> <b>Nuggets Per Second</b>
-                <br>ㅤㅤㅤㅤㅤㅤㅤㅤ<button title="This game autosaves every 30 seconds" onclick="saveGame()">Save</button>
+                <img id="img" src="/Images/chick.png" onclick="addToScore(1)">
+                ㅤ<span id="score"><b></b></span> <b id="bold">Chicken Nuggets</b> <span id="scorePerSec"></span> <b id="nps">Nuggets Per Second</b>
+                <br>ㅤㅤㅤㅤㅤㅤㅤㅤ<button id="save" title="This game autosaves every 30 seconds" onclick="saveGame()">Save</button>
 
             </div>
             <div class="column">
                 <h2 id="hireworkers">Hire Workers</h2>
-                <br><br><br><br><br><br>
-                ㅤㅤㅤㅤㅤㅤㅤ   ㅤ<span id="shinjiP"></span>ㅤㅤCost to Hire: <span id="shinjiCost"></span><button id="shinji" title="150PerSec">Shinji Ikari</button>
+                <br><br><br><br><br><br><div id="hirestuff">
+                ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤCost to Hire: <span id="shinjiCost"></span><button id="shinji" title="150PerSec">Shinji Ikari</button>
                 <br><br>
-                ㅤㅤㅤㅤㅤㅤㅤㅤ <span id="crewmateP"></span>ㅤㅤCost to Hire: <span id="crewmateCost"></span><button id="crewmate" title="300PerSec">Crewmate</button>
+                ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤCost to Hire: <span id="crewmateCost"></span><button id="crewmate" title="300PerSec">Crewmate</button>
                 <br><br>
-                ㅤㅤㅤㅤㅤㅤ ㅤㅤ<span id="gihunP"></span>ㅤㅤCost to Hire: <span id="gihunCost"></span><button id="gihun" title ="750PerSec">Seong Gi-Hun</button>
+                ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤCost to Hire: <span id="gihunCost"></span><button id="gihun" title ="750PerSec">Seong Gi-Hun</button>
                 <br><br>
-                ㅤㅤㅤㅤㅤㅤㅤㅤ <span id="dreamP"></span>ㅤㅤCost to Hire: <span id="dreamCost"></span><button id="dream" title ="1000PerSec">Dream</button>
+                ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤCost to Hire: <span id="dreamCost"></span><button id="dream" title ="1000PerSec">Dream</button>
                 <br><br>
-                ㅤㅤㅤㅤㅤㅤㅤㅤ <span id="freddyP"></span>ㅤㅤCost to Hire: <span id="freddyCost"></span><button id="freddy" title ="2000PerSec">Freddy Fazbear</button>
-                <br><br>
-                ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ<button id="sp" title="Click if hired Shinji">✓</button><button id="cp" title="Click if hired Crewmate">✓</button><button id="gp" title ="Click if hired Gi-Hun">✓</button><button id="dp" title ="Click if hired Dream">✓</button><button id="fp" title ="Click if hired Freddy">✓</button><a href=index.html> <img src="Images/home.png" title="Home" id="home"></a>
+                ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤCost to Hire: <span id="freddyCost"></span><button id="freddy" title ="2000PerSec">Freddy Fazbear</button>
+                <br><br></div>
+                ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ<button id="sp" title="Click if hired Shinji">✓</button><button id="cp" title="Click if hired Crewmate">✓</button><button id="gp" title ="Click if hired Gi-Hun">✓</button><button id="dp" title ="Click if hired Dream">✓</button><button id="fp" title ="Click if hired Freddy">✓</button>ㅤㅤ<button title="Click to toggle light mode" id = "dm" onclick="lmode()">Light</button><button title="Click to toggle dark mode" id="ld" onclick="dmode()">Dark</button><a href=index.html> <img src="Images/home.png" title="Home" id="home"></a>
 
             </div>
         </div>
@@ -230,6 +227,7 @@
     var ga = 0;
     var da = 0;
     var fa = 0;
+    const collection = document.getElementsByTagName("h2");
     setInterval(idle, 1000);
     document.getElementById("img").addEventListener("click", imgClick);
     document.getElementById("chic").addEventListener("click", buyChickens);
@@ -455,6 +453,176 @@
                 document.getElementById('freddyImg').style.display='block';
         }
         }
+    function dmode(){
+        document.getElementById("score").style.color = "white";
+        document.getElementById("scorePerSec").style.color = "white";
+        document.getElementById("all").style.color = "white";
+        document.getElementById("h2").style.color = "white";
+        document.getElementById("makechic").style.color = "white";
+        document.getElementById("hireworkers").style.color = "white";
+        document.getElementById("hirestuff").style.color = "white";
+        document.getElementById("bold").style.color = "white";
+        document.getElementById("nps").style.color = "white";
+        document.getElementById("shinjiCost").style.color = "white";
+        document.getElementById("crewmateCost").style.color = "white";
+        document.getElementById("gihunCost").style.color = "white";
+        document.getElementById("dreamCost").style.color = "white";
+        document.getElementById("freddyCost").style.color = "white";
+        document.getElementById("chic").style.color = "white";
+        document.getElementById("farm").style.color = "white";
+        document.getElementById("inc").style.color = "white";
+        document.getElementById("coop").style.color = "white";
+        document.getElementById("barn").style.color = "white";
+        document.getElementById("land").style.color = "white";
+        document.getElementById("expand").style.color = "white";
+        document.getElementById("shinji").style.color = "white";
+        document.getElementById("crewmate").style.color = "white";
+        document.getElementById("gihun").style.color = "white";
+        document.getElementById("dream").style.color = "white";
+        document.getElementById("freddy").style.color = "white";
+        document.getElementById("dm").style.color = "white";
+        document.getElementById("dm").style.background = "black";
+        document.getElementById("dm").style.borderColor = "purple";
+        document.getElementById("chic").style.background = "black";
+        document.getElementById("farm").style.background = "black";
+        document.getElementById("inc").style.background = "black";
+        document.getElementById("coop").style.background = "black";
+        document.getElementById("barn").style.background = "black";
+        document.getElementById("land").style.background = "black";
+        document.getElementById("expand").style.background = "black";
+        document.getElementById("shinji").style.background = "black";
+        document.getElementById("crewmate").style.background = "black";
+        document.getElementById("gihun").style.background = "black";
+        document.getElementById("dream").style.background = "black";
+        document.getElementById("freddy").style.background = "black";
+        document.getElementById("chic").style.borderColor = "purple";
+        document.getElementById("farm").style.borderColor = "purple";
+        document.getElementById("inc").style.borderColor = "purple";
+        document.getElementById("coop").style.borderColor = "purple";
+        document.getElementById("barn").style.borderColor = "purple";
+        document.getElementById("land").style.borderColor = "purple";
+        document.getElementById("expand").style.borderColor = "purple";
+        document.getElementById("shinji").style.borderColor = "purple";
+        document.getElementById("crewmate").style.borderColor = "purple";
+        document.getElementById("gihun").style.borderColor = "purple";
+        document.getElementById("dream").style.borderColor = "purple";
+        document.getElementById("freddy").style.borderColor = "purple";
+        document.getElementById("sp").style.color = "white";
+        document.getElementById("cp").style.color = "white";
+        document.getElementById("gp").style.color = "white";
+        document.getElementById("dp").style.color = "white";
+        document.getElementById("fp").style.color = "white";
+        document.getElementById("sp").style.background = "black";
+        document.getElementById("cp").style.background = "black";
+        document.getElementById("gp").style.background = "black";
+        document.getElementById("dp").style.background = "black";
+        document.getElementById("fp").style.background = "black";
+        document.getElementById("sp").style.borderColor = "purple";
+        document.getElementById("cp").style.borderColor = "purple";
+        document.getElementById("gp").style.borderColor = "purple";
+        document.getElementById("dp").style.borderColor = "purple";
+        document.getElementById("fp").style.borderColor = "purple";
+        document.getElementById("save").style.color = "white";
+        document.getElementById("save").style.background = "black";
+        document.getElementById("save").style.borderColor = "purple";
+        document.body.style.backgroundImage = "url('Images/nightfarm.jpg')";
+        document.getElementById('home').src=('Images/homew.png');
+        document.getElementById('img').src=('Images/chickw.png');
+        document.getElementById("ld").style.color = "white";
+        document.getElementById("ld").style.background = "black";
+        document.getElementById("ld").style.borderColor = "purple";
+
+
+
+
+
+
+    }
+    function lmode(){
+        document.getElementById("score").style.color = "red";
+        document.getElementById("scorePerSec").style.color = "red";
+        document.getElementById("all").style.color = "red";
+        document.getElementById("h2").style.color = "red";
+        document.getElementById("makechic").style.color = "red";
+        document.getElementById("hireworkers").style.color = "red";
+        document.getElementById("hirestuff").style.color = "red";
+        document.getElementById("bold").style.color = "red";
+        document.getElementById("nps").style.color = "red";
+        document.getElementById("shinjiCost").style.color = "red";
+        document.getElementById("crewmateCost").style.color = "red";
+        document.getElementById("gihunCost").style.color = "red";
+        document.getElementById("dreamCost").style.color = "red";
+        document.getElementById("freddyCost").style.color = "red";
+        document.getElementById("chic").style.color = "black";
+        document.getElementById("farm").style.color = "black";
+        document.getElementById("inc").style.color = "black";
+        document.getElementById("coop").style.color = "black";
+        document.getElementById("barn").style.color = "black";
+        document.getElementById("land").style.color = "black";
+        document.getElementById("expand").style.color = "black";
+        document.getElementById("shinji").style.color = "black";
+        document.getElementById("crewmate").style.color = "black";
+        document.getElementById("gihun").style.color = "black";
+        document.getElementById("dream").style.color = "black";
+        document.getElementById("freddy").style.color = "black";
+        document.getElementById("chic").style.background = "yellow";
+        document.getElementById("farm").style.background = "yellow";
+        document.getElementById("inc").style.background = "yellow";
+        document.getElementById("coop").style.background = "yellow";
+        document.getElementById("barn").style.background = "yellow";
+        document.getElementById("land").style.background = "yellow";
+        document.getElementById("expand").style.background = "yellow";
+        document.getElementById("shinji").style.background = "yellow";
+        document.getElementById("crewmate").style.background = "yellow";
+        document.getElementById("gihun").style.background = "yellow";
+        document.getElementById("dream").style.background = "yellow";
+        document.getElementById("freddy").style.background = "yellow";
+        document.getElementById("chic").style.borderColor = "red";
+        document.getElementById("farm").style.borderColor = "red";
+        document.getElementById("inc").style.borderColor = "red";
+        document.getElementById("coop").style.borderColor = "red";
+        document.getElementById("barn").style.borderColor = "red";
+        document.getElementById("land").style.borderColor = "red";
+        document.getElementById("expand").style.borderColor = "red";
+        document.getElementById("shinji").style.borderColor = "red";
+        document.getElementById("crewmate").style.borderColor = "red";
+        document.getElementById("gihun").style.borderColor = "red";
+        document.getElementById("dream").style.borderColor = "red";
+        document.getElementById("freddy").style.borderColor = "red";
+        document.getElementById("sp").style.color = "black";
+        document.getElementById("cp").style.color = "black";
+        document.getElementById("gp").style.color = "black";
+        document.getElementById("dp").style.color = "black";
+        document.getElementById("fp").style.color = "black";
+        document.getElementById("sp").style.background = "yellow";
+        document.getElementById("cp").style.background = "yellow";
+        document.getElementById("gp").style.background = "yellow";
+        document.getElementById("dp").style.background = "yellow";
+        document.getElementById("fp").style.background = "yellow";
+        document.getElementById("sp").style.borderColor = "red";
+        document.getElementById("cp").style.borderColor = "red";
+        document.getElementById("gp").style.borderColor = "red";
+        document.getElementById("dp").style.borderColor = "red";
+        document.getElementById("fp").style.borderColor = "red";
+        document.getElementById("save").style.color = "black";
+        document.getElementById("save").style.background = "yellow";
+        document.getElementById("save").style.borderColor = "red";
+        document.body.style.backgroundImage = "url(https://foodtank.com/wp-content/uploads/2020/04/COVID-19-Relief_Small-Farms-.jpg)";
+        document.getElementById('home').src=('Images/home.png');
+        document.getElementById('img').src=('Images/chick.png');
+        document.getElementById("ld").style.color = "black";
+        document.getElementById("ld").style.background = "yellow";
+        document.getElementById("ld").style.borderColor = "red";
+        document.getElementById("dm").style.color = "black";
+        document.getElementById("dm").style.background = "yellow";
+        document.getElementById("dm").style.borderColor = "red";
+
+
+
+
+
+
+    }
         // Save Game
           //save game stuff//
           function saveGame() {
