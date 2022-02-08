@@ -68,6 +68,7 @@
             display:none;
             position:fixed;
             bottom:0px;
+            left:1%;
             pointer-events: none;
             height:200px;
             width:200px;
@@ -75,9 +76,9 @@
 
         #crewmateImg{
             display:none;
-            position:fixed;
+            position:absolute;
             bottom:0px;
-            left:300px;
+            left:21%;
             pointer-events: none;
             height:200px;
             width:200px;
@@ -85,9 +86,9 @@
 
         #gihunImg{
             display:none;
-            position:fixed;
+            position:absolute;
             bottom:0px;
-            left:550px;
+            left:41%;
             pointer-events: none;
             height:200px;
             width:200px;
@@ -97,7 +98,7 @@
             display:none;
             position:fixed;
             bottom:0px;
-            left:800px;
+            left:60%;
             pointer-events: none;
             height:200px;
             width:200px;
@@ -107,7 +108,7 @@
             display:none;
             position:fixed;
             bottom:0px;
-            left:1050px;
+            left:80%;
             pointer-events: none;
             height:200px;
             width:200px;
@@ -118,8 +119,15 @@
             height:30px;
             float:right
         }
-
         
+        #duck{
+            width:13px;
+            height:13px;
+            position:absolute;
+            left:76%;
+            top:84%;
+            float:left;
+        }
     </style>
 </head>
 <body>
@@ -147,6 +155,7 @@
                 <img id="gihunImg" src="Images/farmerGihun.png" >
                 <img id="dreamImg" src="Images/farmerDream.png" >
                 <img id="freddyImg" src="Images/farmerFreddy3.png" >
+                <img id="duck" src="Images/duck.png" onclick="duckclicker()">
 
             </div>
             <div class="column">
@@ -459,9 +468,11 @@
         document.getElementById("all").style.color = "white";
         document.getElementById("h2").style.color = "white";
         document.getElementById("makechic").style.color = "white";
+        document.getElementById("makechic").textContent = "Make Chicken Nuggets";
         document.getElementById("hireworkers").style.color = "white";
         document.getElementById("hirestuff").style.color = "white";
         document.getElementById("bold").style.color = "white";
+        document.getElementById("bold").textContent = "Chicken Nuggets";
         document.getElementById("nps").style.color = "white";
         document.getElementById("shinjiCost").style.color = "white";
         document.getElementById("crewmateCost").style.color = "white";
@@ -484,6 +495,7 @@
         document.getElementById("dm").style.background = "black";
         document.getElementById("dm").style.borderColor = "purple";
         document.getElementById("chic").style.background = "black";
+        document.getElementById("chic").textContent = "Breed Chickens";
         document.getElementById("farm").style.background = "black";
         document.getElementById("inc").style.background = "black";
         document.getElementById("coop").style.background = "black";
@@ -531,6 +543,7 @@
         document.getElementById("ld").style.color = "white";
         document.getElementById("ld").style.background = "black";
         document.getElementById("ld").style.borderColor = "purple";
+        document.getElementById('duck').style.display='none';
 
 
 
@@ -544,9 +557,11 @@
         document.getElementById("all").style.color = "red";
         document.getElementById("h2").style.color = "red";
         document.getElementById("makechic").style.color = "red";
+        document.getElementById("makechic").textContent = "Make Chicken Nuggets";
         document.getElementById("hireworkers").style.color = "red";
         document.getElementById("hirestuff").style.color = "red";
         document.getElementById("bold").style.color = "red";
+        document.getElementById("bold").textContent = "Chicken Nuggets";
         document.getElementById("nps").style.color = "red";
         document.getElementById("shinjiCost").style.color = "red";
         document.getElementById("crewmateCost").style.color = "red";
@@ -566,6 +581,7 @@
         document.getElementById("dream").style.color = "black";
         document.getElementById("freddy").style.color = "black";
         document.getElementById("chic").style.background = "yellow";
+        document.getElementById("chic").textContent = "Breed Chickens";
         document.getElementById("farm").style.background = "yellow";
         document.getElementById("inc").style.background = "yellow";
         document.getElementById("coop").style.background = "yellow";
@@ -616,6 +632,96 @@
         document.getElementById("dm").style.color = "black";
         document.getElementById("dm").style.background = "yellow";
         document.getElementById("dm").style.borderColor = "red";
+        document.getElementById('duck').style.display='block';
+
+
+
+
+
+
+    }
+    function duckclicker(){
+        document.getElementById('duck').style.display='none';
+        document.getElementById("score").style.color = "black";
+        document.getElementById("scorePerSec").style.color = "black";
+        document.getElementById("all").style.color = "black";
+        document.getElementById("h2").style.color = "black";
+        document.getElementById("makechic").style.color = "black";
+        document.getElementById("makechic").textContent = "ㅤㅤMake Duck Nuggets";
+        document.getElementById("hireworkers").style.color = "black";
+        document.getElementById("hirestuff").style.color = "black";
+        document.getElementById("bold").style.color = "black";
+        document.getElementById("bold").textContent = "Duck Nuggets";
+        document.getElementById("nps").style.color = "black";
+        document.getElementById("shinjiCost").style.color = "black";
+        document.getElementById("crewmateCost").style.color = "black";
+        document.getElementById("gihunCost").style.color = "black";
+        document.getElementById("dreamCost").style.color = "black";
+        document.getElementById("freddyCost").style.color = "black";
+        document.getElementById("chic").style.color = "black";
+        document.getElementById("chic").textContent = "Breed Ducks";
+        document.getElementById("farm").style.color = "black";
+        document.getElementById("inc").style.color = "black";
+        document.getElementById("coop").style.color = "black";
+        document.getElementById("barn").style.color = "black";
+        document.getElementById("land").style.color = "black";
+        document.getElementById("expand").style.color = "black";
+        document.getElementById("shinji").style.color = "black";
+        document.getElementById("crewmate").style.color = "black";
+        document.getElementById("gihun").style.color = "black";
+        document.getElementById("dream").style.color = "black";
+        document.getElementById("freddy").style.color = "black";
+        document.getElementById("chic").style.background = "green";
+        document.getElementById("farm").style.background = "green";
+        document.getElementById("inc").style.background = "green";
+        document.getElementById("coop").style.background = "green";
+        document.getElementById("barn").style.background = "green";
+        document.getElementById("land").style.background = "green";
+        document.getElementById("expand").style.background = "green";
+        document.getElementById("shinji").style.background = "green";
+        document.getElementById("crewmate").style.background = "green";
+        document.getElementById("gihun").style.background = "green";
+        document.getElementById("dream").style.background = "green";
+        document.getElementById("freddy").style.background = "green";
+        document.getElementById("chic").style.borderColor = "black";
+        document.getElementById("farm").style.borderColor = "black";
+        document.getElementById("inc").style.borderColor = "black";
+        document.getElementById("coop").style.borderColor = "black";
+        document.getElementById("barn").style.borderColor = "black";
+        document.getElementById("land").style.borderColor = "black";
+        document.getElementById("expand").style.borderColor = "black";
+        document.getElementById("shinji").style.borderColor = "black";
+        document.getElementById("crewmate").style.borderColor = "black";
+        document.getElementById("gihun").style.borderColor = "black";
+        document.getElementById("dream").style.borderColor = "black";
+        document.getElementById("freddy").style.borderColor = "black";
+        document.getElementById("sp").style.color = "black";
+        document.getElementById("cp").style.color = "black";
+        document.getElementById("gp").style.color = "black";
+        document.getElementById("dp").style.color = "black";
+        document.getElementById("fp").style.color = "black";
+        document.getElementById("sp").style.background = "green";
+        document.getElementById("cp").style.background = "green";
+        document.getElementById("gp").style.background = "green";
+        document.getElementById("dp").style.background = "green";
+        document.getElementById("fp").style.background = "green";
+        document.getElementById("sp").style.borderColor = "black";
+        document.getElementById("cp").style.borderColor = "black";
+        document.getElementById("gp").style.borderColor = "black";
+        document.getElementById("dp").style.borderColor = "black";
+        document.getElementById("fp").style.borderColor = "black";
+        document.getElementById("save").style.color = "black";
+        document.getElementById("save").style.background = "green";
+        document.getElementById("save").style.borderColor = "black";
+        document.body.style.backgroundImage = "url(Images/pond.jpg)";
+        document.getElementById('home').src=('Images/homeb.png');
+        document.getElementById('img').src=('Images/duck.png');
+        document.getElementById("ld").style.color = "black";
+        document.getElementById("ld").style.background = "green";
+        document.getElementById("ld").style.borderColor = "black";
+        document.getElementById("dm").style.color = "black";
+        document.getElementById("dm").style.background = "green";
+        document.getElementById("dm").style.borderColor = "black";
 
 
 
