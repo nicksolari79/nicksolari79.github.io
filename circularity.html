@@ -21,17 +21,23 @@
     var y = []
     var speedx = []
     var speedy = []
-    for(i=0; i<100; i=i+1){
-        x.push(Math.random()*99+1)
-        y.push(Math.random()*99+1)
-        speedy.push(Math.random()*99+1)
-        speedx.push(Math.random()*99+1)
+    for(i=0; i<2; i=i+1){
+        x.push(Math.random()*1+1)
+        y.push(Math.random()*1+1)
+        speedy.push(Math.random()*1+1)
+        speedx.push(Math.random()*1+1)
     }
     var color = 0
     ctx.fillStyle = "blue"
     function move() {
         ctx.clearRect(0, 0, 600, 600)
-        for (var i = 0; i < 100; i = i + 1) {
+        for (var i = 0; i < x.length; i = i + 1) {
+            for(var j = 0; j<x.length; j=j+5){
+                if(x[i]===x[j]){
+                    speedx[i]=-speedx[j] +10
+                    speedy[i]=-speedy[j] +5
+                }
+            }
             x[i] = x[i] + speedx[i]
             y[i] = y[i] + speedy[i]
             //ctx.fillRect(x[i], y[i], 50, 50)
