@@ -17,10 +17,10 @@
     var canvas = document.getElementById("canvas")
     var ctx = canvas.getContext("2d")
     setInterval(move, 50)
-    var x = []
-    var y = []
-    var speedx = []
-    var speedy = []
+    var x = [3,28]
+    var y = [9,17]
+    var speedx = [4,9]
+    var speedy = [13,25]
     for(i=0; i<2; i=i+1){
         x.push(Math.random()*1+1)
         y.push(Math.random()*1+1)
@@ -32,10 +32,13 @@
     function move() {
         ctx.clearRect(0, 0, 600, 600)
         for (var i = 0; i < x.length; i = i + 1) {
-            for(var j = 0; j<x.length; j=j+5){
-                if(x[i]===x[j]){
-                    speedx[i]=-speedx[j] +10
-                    speedy[i]=-speedy[j] +5
+            for(var j = 0; j<x.length; j=j+1){
+                if(i!==j){
+
+                    if(Math.sqrt(x[i]-x[j])){
+                    speedx[i]=-speedx[j] 
+                    speedy[i]=-speedy[j]
+                } 
                 }
             }
             x[i] = x[i] + speedx[i]
