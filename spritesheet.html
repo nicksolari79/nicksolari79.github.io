@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <style>
+            canvas{
+                background-color: gray;
+            }
+            #sprite{
+                display:none;
+            }
+        </style>
+    </head>
+    <body>
+        <img id="sprite" src="Images/sprite.png">
+        <canvas id="canvas" width="500" height="500">
+        </canvas>
+    </body>
+    <script>
+        window.onload = function() {
+            var c = document.getElementById("canvas");
+            var ctx = c.getContext("2d");
+            var img = document.getElementById("sprite");
+            ctx.drawImage(img, 10, 10);
+}
+    </script>
+</html>

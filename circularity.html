@@ -1,58 +1,152 @@
 <html>
 
 <body>
-    <canvas id="canvas" width="600" height="600">
+    <center>
 
-    </canvas>
+        <canvas id="canvas" width="800" height="600">
+        </canvas>
+    </center>
 
     <head>
         <style>
             canvas {
                 background-color: black;
+                top: 20%;
+                position: absolute;
+                left: 22%;
+            }
+
+            body {
+                background: rgb(125, 198, 205);
+                color: rgb(46, 46, 46);
+                padding: 10px;
+                font-family: arial;
+            }
+
+            #all-contents {
+                max-width: 800px;
+                margin: auto;
+            }
+
+            /* navigation menu */
+            nav {
+                background: rgb(150, 41, 239);
+                margin: 0 auto;
+                margin-bottom: 20px;
+                border-radius: 10px;
+                display: flex;
+                padding: 10px;
+                border: solid 10px rgb(0, 0, 0);
+                border-radius: 1em;
+            }
+
+            nav h1 {
+                display: flex;
+                align-items: center;
+                color: white;
+                flex: 1;
+                margin: 0;
+            }
+
+            nav ul {
+                list-style-image: none;
+            }
+
+            nav li {
+                display: inline-block;
+                padding: 0 10px;
+            }
+
+            nav a {
+                text-decoration: none;
+                color: #fff;
+            }
+
+            /* main container area beneath menu */
+            main {
+                background: rgb(245, 238, 219);
+                display: flex;
+                border-radius: 20px;
+            }
+
+            .sidebar {
+                margin-right: 25px;
+                padding: 10px;
+            }
+
+            .sidebar img {
+                width: 200px;
+            }
+
+            .content {
+                flex: 1;
+                padding: 15px;
+            }
+
+            h2,
+            h3 {
+                margin: 0px;
             }
         </style>
     </head>
+    <div id="all contents">
+        <nav>
+            <h1>Nick's Immaculate Website - Circularity</h1>
+            <ul>
+                <li>
+                    <a href="index.html"> Home </a>
+                </li>
+                <li>
+                    <a href="portfolio.html"> Portfolio </a>
+                </li>
+            </ul>
+        </nav>
+
 </body>
 <script>
     var canvas = document.getElementById("canvas")
     var ctx = canvas.getContext("2d")
     setInterval(move, 50)
-    var x = [3,28]
-    var y = [9,17]
-    var speedx = [4,9]
-    var speedy = [13,25]
-    for(i=0; i<2; i=i+1){
-        x.push(Math.random()*1+1)
-        y.push(Math.random()*1+1)
-        speedy.push(Math.random()*1+1)
-        speedx.push(Math.random()*1+1)
+    var x = []
+    var y = []
+    var speedx  = [80,34,12,56,21,40]
+    var speedy  = [75,28,8,46,17,37]
+    for (i = 0; i < 8; i = i + 1) {
+        x.push(Math.random() * 500 + 4)
+        y.push(Math.random() * 500 + 4)
+        speedy.push(Math.random() * 5 - 3)
+        speedx.push(Math.random() * 5 - 3)
     }
     var color = 0
     ctx.fillStyle = "blue"
     function move() {
-        ctx.clearRect(0, 0, 600, 600)
+        ctx.clearRect(50, -7, 700, 650)
         for (var i = 0; i < x.length; i = i + 1) {
-            for(var j = 0; j<x.length; j=j+1){
-                if(i!==j){
-
-                    if(Math.sqrt(x[i]-x[j])){
-                    speedx[i]=-speedx[j] 
-                    speedy[i]=-speedy[j]
-                } 
+            for (var j = 0; j < x.length; j = j + 1) {
+                if (i !== j) {
+                    if (Math.sqrt((x[i] - x[j]) * (x[i] - x[j]) + ((y[i] - y[j]) * (y[i] - y[j]))) <= 20 + 20) {
+                        tempx = speedx[i]
+                        tempy = speedy[i]
+                        speedx[i] = speedx[j]
+                        speedy[i] = speedy[j]
+                        speedx[j] = tempx
+                        speedy[j] = tempy
+                        
+                    }
                 }
             }
             x[i] = x[i] + speedx[i]
             y[i] = y[i] + speedy[i]
             //ctx.fillRect(x[i], y[i], 50, 50)
             ctx.beginPath()
-            ctx.arc(x[i],y[i],20,0,2*Math.PI-color/100)
+            ctx.arc(x[i], y[i], 20, 0, 2 * Math.PI)
             ctx.fill()
-            color=color+1
+            color = color + 1
             ctx.fillStyle = "hsl(" + color + ",100%,50%)"
-            if (x[i] >= 500) {
+            if (x[i] >= 800) {
                 speedx[i] = -speedx[i]
             }
-            if (y[i] >= 500) {
+            if (y[i] >= 600) {
                 speedy[i] = -speedy[i]
             }
 
